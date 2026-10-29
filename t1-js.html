@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Assignment 5 · Aruzhan</title><style>*{box-sizing:border-box}body{margin:0;font:16px/1.65 "Segoe UI",system-ui,sans-serif;background:#0d1024;color:#e6e9ff}
+a{color:#8fa0ff}code{background:#232850;padding:1px 6px;border-radius:6px;color:#7ff0d4;font-size:.9em}
+.app{display:grid;grid-template-columns:270px minmax(0,1fr);min-height:100vh}
+nav{background:#12163a;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto;border-right:1px solid #262b5c}
+nav h4{margin:18px 8px 6px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7b84c9}
+nav a{display:block;padding:7px 12px;border-radius:10px;color:#cdd3ff;text-decoration:none}nav a:hover{background:#1e2452}
+nav a.on{background:linear-gradient(90deg,#5468ff,#8a5cff);color:#fff}
+main{padding:32px clamp(16px,4vw,56px);max-width:1000px;overflow-wrap:anywhere}
+h1{font-size:2rem;margin:0 0 6px;background:linear-gradient(90deg,#8fa0ff,#7ff0d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{margin:30px 0 8px;color:#fff}.lead{color:#a9b1e8}
+.hero{padding:30px;border-radius:20px;background:linear-gradient(135deg,#3a4bd8,#8a5cff 60%,#12b5a0);margin-bottom:24px}.hero h1{background:none;color:#fff;-webkit-text-fill-color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:#161a40;border:1px solid #262b5c;border-radius:16px;padding:16px;transition:.15s}.card:hover{transform:translateY(-3px);border-color:#5468ff}
+.card h3{margin:0 0 6px}.tag{display:inline-block;font-size:.75rem;padding:2px 10px;border-radius:99px;background:#2a3070;color:#bcc5ff;margin:2px}
+.blk{background:#141838;border:1px solid #262b5c;border-radius:16px;margin:20px 0;overflow:hidden}
+.blk h3{margin:0;padding:12px 16px;background:#1a1f4a}.blk small{color:#8d96d8;font-weight:400}
+pre{margin:0;padding:14px 0;overflow-x:auto;font:13px/1.6 Consolas,Menlo,monospace;background:#0a0d20;color:#d7dcff}
+.ln{display:inline-block;width:3.4em;text-align:right;padding-right:14px;color:#566;user-select:none}
+.ex{margin:0;padding:12px 16px 12px 34px;border-top:1px solid #262b5c}.ex li{margin:5px 0}
+.box{border-left:4px solid #7ff0d4;background:#12223a;padding:10px 16px;border-radius:0 12px 12px 0;margin:12px 0}
+.warn{border-color:#ffb703;background:#2a2410}
+@media(max-width:800px){.app{grid-template-columns:minmax(0,1fr)}nav{position:static;height:auto}}
+.sw{display:flex;gap:6px;margin:0 8px 10px}.sw button{flex:1;padding:8px;border:1px solid #3a4180;background:#1a1f4a;color:#cdd3ff;border-radius:10px;cursor:pointer;font-weight:600;font-size:.9rem;font-family:inherit}.sw button.on{background:linear-gradient(90deg,#5468ff,#8a5cff);color:#fff;border-color:transparent}.sw button:focus-visible{outline:3px solid #ffb703}
+body[data-lang="en"] [data-l]:not([data-l="en"]),body[data-lang="ru"] [data-l]:not([data-l="ru"]),body[data-lang="kk"] [data-l]:not([data-l="kk"]){display:none}
+</style></head><body data-lang="ru"><div class="app"><nav><div class="sw"><button data-set="en">EN</button><button data-set="ru">RU</button><button data-set="kk">ҚАЗ</button></div><a href="index.html"><span data-l="en">🏠 Home</span><span data-l="ru">🏠 Главная</span><span data-l="kk">🏠 Басты бет</span></a><a href="basics.html"><span data-l="en">🧠 Basics from zero</span><span data-l="ru">🧠 Основы с нуля</span><span data-l="kk">🧠 Негіздер (нөлден)</span></a><h4><span data-l="en">Task 1 · Higher or Lower</span><span data-l="ru">Задание 1 · Выше или ниже</span><span data-l="kk">1-тапсырма · Жоғары/төмен</span></h4><a href="t1.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t1-html.html"><span data-l="en">task1.html</span><span data-l="ru">task1.html</span><span data-l="kk">task1.html</span></a><a href="t1-js.html" class="on"><span data-l="en">task1.js</span><span data-l="ru">task1.js</span><span data-l="kk">task1.js</span></a><h4><span data-l="en">Task 2 · Kanban</span><span data-l="ru">Задание 2 · Канбан</span><span data-l="kk">2-тапсырма · Канбан</span></h4><a href="t2.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t2-html.html"><span data-l="en">task2.html</span><span data-l="ru">task2.html</span><span data-l="kk">task2.html</span></a><a href="t2-js.html"><span data-l="en">task2.js</span><span data-l="ru">task2.js</span><span data-l="kk">task2.js</span></a><h4><span data-l="en">Task 3 · Ticket form</span><span data-l="ru">Задание 3 · Форма билетов</span><span data-l="kk">3-тапсырма · Билет формасы</span></h4><a href="t3.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t3-html.html"><span data-l="en">task3.html</span><span data-l="ru">task3.html</span><span data-l="kk">task3.html</span></a><a href="t3-js.html"><span data-l="en">task3.js</span><span data-l="ru">task3.js</span><span data-l="kk">task3.js</span></a><h4><span data-l="en">Shared style</span><span data-l="ru">Общий стиль</span><span data-l="kk">Ортақ стиль</span></h4><a href="css.html"><span data-l="en">style.css</span><span data-l="ru">style.css</span><span data-l="kk">style.css</span></a><h4><span data-l="en">Preparation</span><span data-l="ru">Подготовка</span><span data-l="kk">Дайындық</span></h4><a href="live.html"><span data-l="en">⚡ Live coding</span><span data-l="ru">⚡ Live coding</span><span data-l="kk">⚡ Live coding</span></a><a href="tips.html"><span data-l="en">💡 Tips</span><span data-l="ru">💡 Лайфхаки</span><span data-l="kk">💡 Кеңестер</span></a></nav><main><h1><span data-l="en">task1.js</span><span data-l="ru">task1.js</span><span data-l="kk">task1.js</span></h1><p class="lead"><span data-l="en">All game logic, top to bottom.</span><span data-l="ru">Вся логика игры, сверху вниз.</span><span data-l="kk">Ойынның бүкіл логикасы, жоғарыдан төмен.</span></p><section class="blk"><h3><span data-l="en">1. Constants</span><span data-l="ru">1. Константы</span><span data-l="kk">1. Тұрақтылар</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 3–17</small></h3><pre><span class="ln">3</span>/* ===== Task 1: Higher or Lower =====
+<span class="ln">4</span>   Option A. All numbers of the game are constants at the top. */
+<span class="ln">5</span>
+<span class="ln">6</span>const MAX_LIVES = 3;          // lives at the start
+<span class="ln">7</span>const MIN_PRICE = 10;         // smallest possible price (included)
+<span class="ln">8</span>const MAX_PRICE = 60;         // largest possible price (included)
+<span class="ln">9</span>const WIN_STREAK = 10;        // a streak of this length wins the game
+<span class="ln">10</span>const LOG_LIMIT = 5;          // how many last moves are shown
+<span class="ln">11</span>const BEST_KEY = &#x27;a5-best-streak&#x27;;
+<span class="ln">12</span>
+<span class="ln">13</span>const ITEM_NAMES = [
+<span class="ln">14</span>  &#x27;Mechanical keyboard&#x27;, &#x27;Wireless mouse&#x27;, &#x27;USB-C hub&#x27;, &#x27;Webcam HD&#x27;,
+<span class="ln">15</span>  &#x27;Desk lamp&#x27;, &#x27;Bluetooth speaker&#x27;, &#x27;Phone stand&#x27;, &#x27;Laptop sleeve&#x27;,
+<span class="ln">16</span>  &#x27;Gaming headset&#x27;, &#x27;Power bank&#x27;, &#x27;Smart plug&#x27;, &#x27;External SSD&#x27;
+<span class="ln">17</span>];
+</pre><ul class="ex"><li><span data-l="en">Every number of the game is here: change it and the game follows.</span><span data-l="ru">Все числа игры здесь: поменяешь, и игра подстроится.</span><span data-l="kk">Ойынның барлық сандары осында: өзгертсең, ойын да өзгереді.</span></li><li><span data-l="en"><code>ITEM_NAMES</code> is an array of names; <code>BEST_KEY</code> is the localStorage key.</span><span data-l="ru"><code>ITEM_NAMES</code> массив названий; <code>BEST_KEY</code> ключ localStorage.</span><span data-l="kk"><code>ITEM_NAMES</code> атаулар массиві; <code>BEST_KEY</code> localStorage кілті.</span></li></ul></section><section class="blk"><h3><span data-l="en">2. Elements</span><span data-l="ru">2. Элементы</span><span data-l="kk">2. Элементтер</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 19–37</small></h3><pre><span class="ln">19</span>// ---------- elements ----------
+<span class="ln">20</span>const gameEl = document.getElementById(&#x27;game&#x27;);
+<span class="ln">21</span>const livesEl = document.getElementById(&#x27;lives&#x27;);
+<span class="ln">22</span>const streakEl = document.getElementById(&#x27;streak&#x27;);
+<span class="ln">23</span>const bestEl = document.getElementById(&#x27;best&#x27;);
+<span class="ln">24</span>const currentNameEl = document.getElementById(&#x27;currentName&#x27;);
+<span class="ln">25</span>const currentValueEl = document.getElementById(&#x27;currentValue&#x27;);
+<span class="ln">26</span>const nextCardEl = document.getElementById(&#x27;nextCard&#x27;);
+<span class="ln">27</span>const nextNameEl = document.getElementById(&#x27;nextName&#x27;);
+<span class="ln">28</span>const nextValueEl = document.getElementById(&#x27;nextValue&#x27;);
+<span class="ln">29</span>const higherBtn = document.getElementById(&#x27;higherBtn&#x27;);
+<span class="ln">30</span>const lowerBtn = document.getElementById(&#x27;lowerBtn&#x27;);
+<span class="ln">31</span>const typedForm = document.getElementById(&#x27;typedForm&#x27;);
+<span class="ln">32</span>const typedInput = document.getElementById(&#x27;typedGuess&#x27;);
+<span class="ln">33</span>const typedBtn = document.getElementById(&#x27;typedBtn&#x27;);
+<span class="ln">34</span>const messageEl = document.getElementById(&#x27;message&#x27;);
+<span class="ln">35</span>const bannerEl = document.getElementById(&#x27;banner&#x27;);
+<span class="ln">36</span>const restartBtn = document.getElementById(&#x27;restartBtn&#x27;);
+<span class="ln">37</span>const logEl = document.getElementById(&#x27;log&#x27;);
+</pre><ul class="ex"><li><span data-l="en">Find every element once and keep it in a constant.</span><span data-l="ru">Один раз находим каждый элемент и храним в константе.</span><span data-l="kk">Әр элементті бір рет тауып, тұрақтыда сақтаймыз.</span></li></ul></section><section class="blk"><h3><span data-l="en">3. State</span><span data-l="ru">3. Состояние</span><span data-l="kk">3. Күй</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 39–49</small></h3><pre><span class="ln">39</span>// ---------- game state ----------
+<span class="ln">40</span>const state = {
+<span class="ln">41</span>  lives: MAX_LIVES,
+<span class="ln">42</span>  streak: 0,
+<span class="ln">43</span>  best: 0,
+<span class="ln">44</span>  current: null,
+<span class="ln">45</span>  next: null,
+<span class="ln">46</span>  over: false,
+<span class="ln">47</span>  won: false,
+<span class="ln">48</span>  log: []
+<span class="ln">49</span>};
+</pre><ul class="ex"><li><span data-l="en"><code>state</code> is the memory of the game: lives, streak, best, current and next item, over/won, log.</span><span data-l="ru"><code>state</code> память игры: жизни, серия, рекорд, текущий и следующий предмет, over/won, лог.</span><span data-l="kk"><code>state</code> ойын жады: өмір, серия, рекорд, ағымдағы және келесі зат, over/won, лог.</span></li></ul></section><section class="blk"><h3><span data-l="en">4. Helpers</span><span data-l="ru">4. Помощники</span><span data-l="kk">4. Көмекшілер</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 51–83</small></h3><pre><span class="ln">51</span>// Fair random whole number from min to max, both included.
+<span class="ln">52</span>function randomInt(min, max) {
+<span class="ln">53</span>  return Math.floor(Math.random() * (max - min + 1)) + min;
+<span class="ln">54</span>}
+<span class="ln">55</span>
+<span class="ln">56</span>function makeItem() {
+<span class="ln">57</span>  return {
+<span class="ln">58</span>    name: ITEM_NAMES[randomInt(0, ITEM_NAMES.length - 1)],
+<span class="ln">59</span>    value: randomInt(MIN_PRICE, MAX_PRICE)
+<span class="ln">60</span>  };
+<span class="ln">61</span>}
+<span class="ln">62</span>
+<span class="ln">63</span>function loadBest() {
+<span class="ln">64</span>  try {
+<span class="ln">65</span>    const saved = Number(localStorage.getItem(BEST_KEY));
+<span class="ln">66</span>    return Number.isInteger(saved) &amp;&amp; saved &gt;= 0 ? saved : 0;
+<span class="ln">67</span>  } catch (e) {
+<span class="ln">68</span>    return 0;
+<span class="ln">69</span>  }
+<span class="ln">70</span>}
+<span class="ln">71</span>
+<span class="ln">72</span>function saveBest(value) {
+<span class="ln">73</span>  try {
+<span class="ln">74</span>    localStorage.setItem(BEST_KEY, String(value));
+<span class="ln">75</span>  } catch (e) {
+<span class="ln">76</span>    /* storage can be blocked, the game still works */
+<span class="ln">77</span>  }
+<span class="ln">78</span>}
+<span class="ln">79</span>
+<span class="ln">80</span>function setMessage(text, kind) {
+<span class="ln">81</span>  messageEl.textContent = text;
+<span class="ln">82</span>  messageEl.className = &#x27;message message--&#x27; + kind;
+<span class="ln">83</span>}
+</pre><ul class="ex"><li><span data-l="en"><code>randomInt</code>: whole number from min to max, both included.</span><span data-l="ru"><code>randomInt</code>: целое от min до max, оба включены.</span><span data-l="kk"><code>randomInt</code>: min-нен max-қа дейінгі бүтін сан, екеуі де кіреді.</span></li><li><span data-l="en"><code>makeItem</code> builds an object with a random name and price.</span><span data-l="ru"><code>makeItem</code> создаёт объект со случайным названием и ценой.</span><span data-l="kk"><code>makeItem</code> кездейсоқ атауы мен бағасы бар объект жасайды.</span></li><li><span data-l="en"><code>loadBest</code> / <code>saveBest</code> read and write the best streak in the browser.</span><span data-l="ru"><code>loadBest</code> / <code>saveBest</code> читают и пишут лучшую серию в браузере.</span><span data-l="kk"><code>loadBest</code> / <code>saveBest</code> үздік серияны браузерде оқиды және жазады.</span></li></ul></section><section class="blk"><h3><span data-l="en">5. Start / restart</span><span data-l="ru">5. Старт / рестарт</span><span data-l="kk">5. Бастау / қайта бастау</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 85–99</small></h3><pre><span class="ln">85</span>// ---------- start / restart ----------
+<span class="ln">86</span>function startGame() {
+<span class="ln">87</span>  state.lives = MAX_LIVES;
+<span class="ln">88</span>  state.streak = 0;
+<span class="ln">89</span>  state.best = loadBest();
+<span class="ln">90</span>  state.current = makeItem();
+<span class="ln">91</span>  state.next = null;
+<span class="ln">92</span>  state.over = false;
+<span class="ln">93</span>  state.won = false;
+<span class="ln">94</span>  state.log = [];
+<span class="ln">95</span>  typedInput.value = &#x27;&#x27;;
+<span class="ln">96</span>  typedInput.classList.remove(&#x27;typed-input--invalid&#x27;);
+<span class="ln">97</span>  setMessage(&#x27;Is the next price higher or lower than $&#x27; + state.current.value + &#x27;?&#x27;, &#x27;info&#x27;);
+<span class="ln">98</span>  render();
+<span class="ln">99</span>}
+</pre><ul class="ex"><li><span data-l="en">Resets the state and draws a new game: no page reload.</span><span data-l="ru">Сбрасывает state и рисует новую игру: без перезагрузки.</span><span data-l="kk">State-ті тастап, жаңа ойын салады: бетті жаңартпай.</span></li></ul></section><section class="blk"><h3><span data-l="en">6. Reading the move</span><span data-l="ru">6. Разбор хода</span><span data-l="kk">6. Жүрісті талдау</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 101–111</small></h3><pre><span class="ln">101</span>// ---------- a move ----------
+<span class="ln">102</span>function normalizeGuess(raw) {
+<span class="ln">103</span>  const text = String(raw).trim().toLowerCase();
+<span class="ln">104</span>  if (text === &#x27;h&#x27; || text === &#x27;higher&#x27;) {
+<span class="ln">105</span>    return &#x27;higher&#x27;;
+<span class="ln">106</span>  }
+<span class="ln">107</span>  if (text === &#x27;l&#x27; || text === &#x27;lower&#x27;) {
+<span class="ln">108</span>    return &#x27;lower&#x27;;
+<span class="ln">109</span>  }
+<span class="ln">110</span>  return null;
+<span class="ln">111</span>}
+</pre><ul class="ex"><li><span data-l="en"><code>normalizeGuess</code> turns h / higher / l / lower into a clean choice, anything else into <code>null</code>.</span><span data-l="ru"><code>normalizeGuess</code> превращает h / higher / l / lower в чистый выбор, всё остальное в <code>null</code>.</span><span data-l="kk"><code>normalizeGuess</code> h / higher / l / lower мәндерін таза таңдауға, қалғанын <code>null</code>-ға айналдырады.</span></li></ul></section><section class="blk"><h3><span data-l="en">7. makeGuess: the main function</span><span data-l="ru">7. makeGuess: главная функция</span><span data-l="kk">7. makeGuess: басты функция</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 113–171</small></h3><pre><span class="ln">113</span>function makeGuess(raw) {
+<span class="ln">114</span>  if (state.over) {
+<span class="ln">115</span>    setMessage(&#x27;The game is over. Press &quot;Restart game&quot; to play again.&#x27;, &#x27;warn&#x27;);
+<span class="ln">116</span>    return;
+<span class="ln">117</span>  }
+<span class="ln">118</span>
+<span class="ln">119</span>  const choice = normalizeGuess(raw);
+<span class="ln">120</span>  if (choice === null) {
+<span class="ln">121</span>    // invalid input: reject, state is not changed
+<span class="ln">122</span>    typedInput.classList.add(&#x27;typed-input--invalid&#x27;);
+<span class="ln">123</span>    setMessage(&#x27;Invalid move. Type &quot;higher&quot; or &quot;lower&quot; (or H / L).&#x27;, &#x27;bad&#x27;);
+<span class="ln">124</span>    return;
+<span class="ln">125</span>  }
+<span class="ln">126</span>  typedInput.classList.remove(&#x27;typed-input--invalid&#x27;);
+<span class="ln">127</span>
+<span class="ln">128</span>  const previous = state.current;
+<span class="ln">129</span>  const next = makeItem();
+<span class="ln">130</span>  state.next = next;
+<span class="ln">131</span>
+<span class="ln">132</span>  // Equal values count as a right guess.
+<span class="ln">133</span>  const correct =
+<span class="ln">134</span>    (choice === &#x27;higher&#x27; &amp;&amp; next.value &gt;= previous.value) ||
+<span class="ln">135</span>    (choice === &#x27;lower&#x27; &amp;&amp; next.value &lt;= previous.value);
+<span class="ln">136</span>
+<span class="ln">137</span>  let text;
+<span class="ln">138</span>  if (correct) {
+<span class="ln">139</span>    state.streak += 1;
+<span class="ln">140</span>    if (state.streak &gt; state.best) {
+<span class="ln">141</span>      state.best = state.streak;
+<span class="ln">142</span>      saveBest(state.best);
+<span class="ln">143</span>    }
+<span class="ln">144</span>    text = next.value === previous.value
+<span class="ln">145</span>      ? &#x27;Equal prices ($&#x27; + next.value + &#x27;) - counts as a right guess!&#x27;
+<span class="ln">146</span>      : &#x27;Right! $&#x27; + next.value + &#x27; is &#x27; + (next.value &gt; previous.value ? &#x27;higher&#x27; : &#x27;lower&#x27;) + &#x27; than $&#x27; + previous.value + &#x27;.&#x27;;
+<span class="ln">147</span>    setMessage(text, &#x27;ok&#x27;);
+<span class="ln">148</span>  } else {
+<span class="ln">149</span>    state.lives -= 1;
+<span class="ln">150</span>    state.streak = 0;
+<span class="ln">151</span>    text = &#x27;Wrong. $&#x27; + next.value + &#x27; is &#x27; + (next.value &gt; previous.value ? &#x27;higher&#x27; : &#x27;lower&#x27;) + &#x27; than $&#x27; + previous.value + &#x27;.&#x27;;
+<span class="ln">152</span>    setMessage(text, &#x27;bad&#x27;);
+<span class="ln">153</span>  }
+<span class="ln">154</span>
+<span class="ln">155</span>  // game end conditions
+<span class="ln">156</span>  if (state.lives === 0) {
+<span class="ln">157</span>    state.over = true;
+<span class="ln">158</span>    state.won = false;
+<span class="ln">159</span>  } else if (state.streak === WIN_STREAK) {
+<span class="ln">160</span>    state.over = true;
+<span class="ln">161</span>    state.won = true;
+<span class="ln">162</span>  }
+<span class="ln">163</span>
+<span class="ln">164</span>  state.log.unshift({ text: text, correct: correct });
+<span class="ln">165</span>  if (state.log.length &gt; LOG_LIMIT) {
+<span class="ln">166</span>    state.log.length = LOG_LIMIT;
+<span class="ln">167</span>  }
+<span class="ln">168</span>
+<span class="ln">169</span>  state.current = next;
+<span class="ln">170</span>  render();
+<span class="ln">171</span>}
+</pre><ul class="ex"><li><span data-l="en">First the checks: game over or invalid input → message and <code>return</code></span><span data-l="ru">Сначала проверки: игра окончена или неверный ввод → сообщение и <code>return</code></span><span data-l="kk">Алдымен тексерулер: ойын бітті немесе қате енгізу → хабарлама және <code>return</code></span></li><li><span data-l="en"><code>correct</code> is decided with <code>===</code>, <code>&amp;&amp;</code>, <code>||</code>; <code>>=</code> makes equal prices right.</span><span data-l="ru"><code>correct</code> решается через <code>===</code>, <code>&amp;&amp;</code>, <code>||</code>; <code>>=</code> делает равные цены верными.</span><span data-l="kk"><code>correct</code> <code>===</code>, <code>&amp;&amp;</code>, <code>||</code> арқылы шешіледі; <code>>=</code> тең бағаны дұрыс етеді.</span></li><li><span data-l="en">Right: streak + 1, update best. Wrong: lives − 1, streak 0.</span><span data-l="ru">Верно: серия + 1, обновить рекорд. Неверно: жизни − 1, серия 0.</span><span data-l="kk">Дұрыс: серия + 1, рекордты жаңарту. Қате: өмір − 1, серия 0.</span></li><li><span data-l="en">End: <code>lives === 0</code> loss, <code>streak === WIN_STREAK</code> win. Then log (max 5) and <code>render()</code>.</span><span data-l="ru">Конец: <code>lives === 0</code> поражение, <code>streak === WIN_STREAK</code> победа. Затем лог (макс 5) и <code>render()</code>.</span><span data-l="kk">Соңы: <code>lives === 0</code> жеңіліс, <code>streak === WIN_STREAK</code> жеңіс. Сосын лог (макс 5) және <code>render()</code>.</span></li></ul></section><section class="blk"><h3><span data-l="en">8. render</span><span data-l="ru">8. render</span><span data-l="kk">8. render</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 173–227</small></h3><pre><span class="ln">173</span>// ---------- render ----------
+<span class="ln">174</span>function render() {
+<span class="ln">175</span>  // lives as hearts
+<span class="ln">176</span>  livesEl.textContent = &#x27;&#x27;;
+<span class="ln">177</span>  for (let i = 0; i &lt; MAX_LIVES; i++) {
+<span class="ln">178</span>    const heart = document.createElement(&#x27;span&#x27;);
+<span class="ln">179</span>    heart.className = i &lt; state.lives ? &#x27;heart&#x27; : &#x27;heart heart--lost&#x27;;
+<span class="ln">180</span>    heart.textContent = &#x27;♥&#x27;;
+<span class="ln">181</span>    livesEl.appendChild(heart);
+<span class="ln">182</span>  }
+<span class="ln">183</span>  livesEl.setAttribute(&#x27;aria-label&#x27;, state.lives + &#x27; of &#x27; + MAX_LIVES + &#x27; lives left&#x27;);
+<span class="ln">184</span>
+<span class="ln">185</span>  streakEl.textContent = state.streak;
+<span class="ln">186</span>  bestEl.textContent = state.best;
+<span class="ln">187</span>
+<span class="ln">188</span>  currentNameEl.textContent = state.current.name;
+<span class="ln">189</span>  currentValueEl.textContent = &#x27;$&#x27; + state.current.value;
+<span class="ln">190</span>
+<span class="ln">191</span>  nextCardEl.classList.add(&#x27;item--hidden&#x27;);
+<span class="ln">192</span>  nextNameEl.textContent = state.over ? &#x27;Game over&#x27; : &#x27;Next gadget&#x27;;
+<span class="ln">193</span>  nextValueEl.textContent = &#x27;?&#x27;;
+<span class="ln">194</span>
+<span class="ln">195</span>  // controls
+<span class="ln">196</span>  higherBtn.disabled = state.over;
+<span class="ln">197</span>  lowerBtn.disabled = state.over;
+<span class="ln">198</span>  typedBtn.disabled = state.over;
+<span class="ln">199</span>  typedInput.disabled = state.over;
+<span class="ln">200</span>
+<span class="ln">201</span>  // end state
+<span class="ln">202</span>  gameEl.classList.toggle(&#x27;game--over&#x27;, state.over);
+<span class="ln">203</span>  gameEl.classList.toggle(&#x27;game--won&#x27;, state.over &amp;&amp; state.won);
+<span class="ln">204</span>  gameEl.classList.toggle(&#x27;game--lost&#x27;, state.over &amp;&amp; !state.won);
+<span class="ln">205</span>  bannerEl.classList.toggle(&#x27;hidden&#x27;, !state.over);
+<span class="ln">206</span>  if (state.over) {
+<span class="ln">207</span>    bannerEl.textContent = state.won
+<span class="ln">208</span>      ? &#x27;You win! Streak of &#x27; + WIN_STREAK + &#x27; reached.&#x27;
+<span class="ln">209</span>      : &#x27;Game over. No lives left. Best streak: &#x27; + state.best + &#x27;.&#x27;;
+<span class="ln">210</span>  }
+<span class="ln">211</span>
+<span class="ln">212</span>  // log
+<span class="ln">213</span>  logEl.textContent = &#x27;&#x27;;
+<span class="ln">214</span>  if (state.log.length === 0) {
+<span class="ln">215</span>    const empty = document.createElement(&#x27;li&#x27;);
+<span class="ln">216</span>    empty.className = &#x27;log__empty&#x27;;
+<span class="ln">217</span>    empty.textContent = &#x27;No moves yet. Make your first guess!&#x27;;
+<span class="ln">218</span>    logEl.appendChild(empty);
+<span class="ln">219</span>  } else {
+<span class="ln">220</span>    for (const entry of state.log) {
+<span class="ln">221</span>      const li = document.createElement(&#x27;li&#x27;);
+<span class="ln">222</span>      li.className = &#x27;log__item &#x27; + (entry.correct ? &#x27;log__item--correct&#x27; : &#x27;log__item--wrong&#x27;);
+<span class="ln">223</span>      li.textContent = entry.text;
+<span class="ln">224</span>      logEl.appendChild(li);
+<span class="ln">225</span>    }
+<span class="ln">226</span>  }
+<span class="ln">227</span>}
+</pre><ul class="ex"><li><span data-l="en">Writes state into the page with <code>textContent</code>; toggles CSS classes; disables buttons at the end.</span><span data-l="ru">Записывает state в страницу через <code>textContent</code>; переключает CSS-классы; в конце отключает кнопки.</span><span data-l="kk">State-ті бетке <code>textContent</code> арқылы жазады; CSS кластарын ауыстырады; соңында түймелерді өшіреді.</span></li></ul></section><section class="blk"><h3><span data-l="en">9. Events</span><span data-l="ru">9. События</span><span data-l="kk">9. Оқиғалар</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 229–258</small></h3><pre><span class="ln">229</span>// ---------- events ----------
+<span class="ln">230</span>higherBtn.addEventListener(&#x27;click&#x27;, function () { makeGuess(&#x27;higher&#x27;); });
+<span class="ln">231</span>lowerBtn.addEventListener(&#x27;click&#x27;, function () { makeGuess(&#x27;lower&#x27;); });
+<span class="ln">232</span>restartBtn.addEventListener(&#x27;click&#x27;, startGame);
+<span class="ln">233</span>
+<span class="ln">234</span>typedForm.addEventListener(&#x27;submit&#x27;, function (event) {
+<span class="ln">235</span>  event.preventDefault();
+<span class="ln">236</span>  makeGuess(typedInput.value);
+<span class="ln">237</span>  if (!state.over) {
+<span class="ln">238</span>    typedInput.value = &#x27;&#x27;;
+<span class="ln">239</span>    typedInput.focus();
+<span class="ln">240</span>  }
+<span class="ln">241</span>});
+<span class="ln">242</span>
+<span class="ln">243</span>document.addEventListener(&#x27;keydown&#x27;, function (event) {
+<span class="ln">244</span>  // keyboard shortcuts only when the user is not typing in a field
+<span class="ln">245</span>  if (event.target === typedInput || event.ctrlKey || event.metaKey || event.altKey) {
+<span class="ln">246</span>    return;
+<span class="ln">247</span>  }
+<span class="ln">248</span>  const key = event.key.toLowerCase();
+<span class="ln">249</span>  if (key === &#x27;h&#x27;) {
+<span class="ln">250</span>    makeGuess(&#x27;higher&#x27;);
+<span class="ln">251</span>  } else if (key === &#x27;l&#x27;) {
+<span class="ln">252</span>    makeGuess(&#x27;lower&#x27;);
+<span class="ln">253</span>  } else if (key === &#x27;r&#x27;) {
+<span class="ln">254</span>    startGame();
+<span class="ln">255</span>  }
+<span class="ln">256</span>});
+<span class="ln">257</span>
+<span class="ln">258</span>startGame();
+</pre><ul class="ex"><li><span data-l="en">Buttons call <code>makeGuess</code>; the form uses <code>preventDefault()</code> so the page does not reload.</span><span data-l="ru">Кнопки вызывают <code>makeGuess</code>; форма использует <code>preventDefault()</code>, чтобы страница не перезагружалась.</span><span data-l="kk">Түймелер <code>makeGuess</code> шақырады; форма <code>preventDefault()</code> қолданады, бет жаңармайды.</span></li><li><span data-l="en"><code>keydown</code>: H, L and R work as shortcuts when you are not typing in the field.</span><span data-l="ru"><code>keydown</code>: H, L и R работают как горячие клавиши, если не печатаешь в поле.</span><span data-l="kk"><code>keydown</code>: өрісте теру болмаса H, L және R жылдам пернелер болады.</span></li><li><span data-l="en">The last line <code>startGame()</code> starts the game.</span><span data-l="ru">Последняя строка <code>startGame()</code> запускает игру.</span><span data-l="kk">Соңғы жол <code>startGame()</code> ойынды бастайды.</span></li></ul></section></main></div><script>var L;try{L=localStorage.getItem("lang")}catch(e){}L=L||"ru";function s(l){document.body.dataset.lang=l;document.documentElement.lang=l;try{localStorage.setItem("lang",l)}catch(e){}document.querySelectorAll(".sw button").forEach(function(b){b.classList.toggle("on",b.dataset.set===l)})}document.querySelectorAll(".sw button").forEach(function(b){b.onclick=function(){s(b.dataset.set)}});s(L);</script></body></html>

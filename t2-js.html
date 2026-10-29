@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Assignment 5 · Aruzhan</title><style>*{box-sizing:border-box}body{margin:0;font:16px/1.65 "Segoe UI",system-ui,sans-serif;background:#0d1024;color:#e6e9ff}
+a{color:#8fa0ff}code{background:#232850;padding:1px 6px;border-radius:6px;color:#7ff0d4;font-size:.9em}
+.app{display:grid;grid-template-columns:270px minmax(0,1fr);min-height:100vh}
+nav{background:#12163a;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto;border-right:1px solid #262b5c}
+nav h4{margin:18px 8px 6px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7b84c9}
+nav a{display:block;padding:7px 12px;border-radius:10px;color:#cdd3ff;text-decoration:none}nav a:hover{background:#1e2452}
+nav a.on{background:linear-gradient(90deg,#5468ff,#8a5cff);color:#fff}
+main{padding:32px clamp(16px,4vw,56px);max-width:1000px;overflow-wrap:anywhere}
+h1{font-size:2rem;margin:0 0 6px;background:linear-gradient(90deg,#8fa0ff,#7ff0d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{margin:30px 0 8px;color:#fff}.lead{color:#a9b1e8}
+.hero{padding:30px;border-radius:20px;background:linear-gradient(135deg,#3a4bd8,#8a5cff 60%,#12b5a0);margin-bottom:24px}.hero h1{background:none;color:#fff;-webkit-text-fill-color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:#161a40;border:1px solid #262b5c;border-radius:16px;padding:16px;transition:.15s}.card:hover{transform:translateY(-3px);border-color:#5468ff}
+.card h3{margin:0 0 6px}.tag{display:inline-block;font-size:.75rem;padding:2px 10px;border-radius:99px;background:#2a3070;color:#bcc5ff;margin:2px}
+.blk{background:#141838;border:1px solid #262b5c;border-radius:16px;margin:20px 0;overflow:hidden}
+.blk h3{margin:0;padding:12px 16px;background:#1a1f4a}.blk small{color:#8d96d8;font-weight:400}
+pre{margin:0;padding:14px 0;overflow-x:auto;font:13px/1.6 Consolas,Menlo,monospace;background:#0a0d20;color:#d7dcff}
+.ln{display:inline-block;width:3.4em;text-align:right;padding-right:14px;color:#566;user-select:none}
+.ex{margin:0;padding:12px 16px 12px 34px;border-top:1px solid #262b5c}.ex li{margin:5px 0}
+.box{border-left:4px solid #7ff0d4;background:#12223a;padding:10px 16px;border-radius:0 12px 12px 0;margin:12px 0}
+.warn{border-color:#ffb703;background:#2a2410}
+@media(max-width:800px){.app{grid-template-columns:minmax(0,1fr)}nav{position:static;height:auto}}
+.sw{display:flex;gap:6px;margin:0 8px 10px}.sw button{flex:1;padding:8px;border:1px solid #3a4180;background:#1a1f4a;color:#cdd3ff;border-radius:10px;cursor:pointer;font-weight:600;font-size:.9rem;font-family:inherit}.sw button.on{background:linear-gradient(90deg,#5468ff,#8a5cff);color:#fff;border-color:transparent}.sw button:focus-visible{outline:3px solid #ffb703}
+body[data-lang="en"] [data-l]:not([data-l="en"]),body[data-lang="ru"] [data-l]:not([data-l="ru"]),body[data-lang="kk"] [data-l]:not([data-l="kk"]){display:none}
+</style></head><body data-lang="ru"><div class="app"><nav><div class="sw"><button data-set="en">EN</button><button data-set="ru">RU</button><button data-set="kk">ҚАЗ</button></div><a href="index.html"><span data-l="en">🏠 Home</span><span data-l="ru">🏠 Главная</span><span data-l="kk">🏠 Басты бет</span></a><a href="basics.html"><span data-l="en">🧠 Basics from zero</span><span data-l="ru">🧠 Основы с нуля</span><span data-l="kk">🧠 Негіздер (нөлден)</span></a><h4><span data-l="en">Task 1 · Higher or Lower</span><span data-l="ru">Задание 1 · Выше или ниже</span><span data-l="kk">1-тапсырма · Жоғары/төмен</span></h4><a href="t1.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t1-html.html"><span data-l="en">task1.html</span><span data-l="ru">task1.html</span><span data-l="kk">task1.html</span></a><a href="t1-js.html"><span data-l="en">task1.js</span><span data-l="ru">task1.js</span><span data-l="kk">task1.js</span></a><h4><span data-l="en">Task 2 · Kanban</span><span data-l="ru">Задание 2 · Канбан</span><span data-l="kk">2-тапсырма · Канбан</span></h4><a href="t2.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t2-html.html"><span data-l="en">task2.html</span><span data-l="ru">task2.html</span><span data-l="kk">task2.html</span></a><a href="t2-js.html" class="on"><span data-l="en">task2.js</span><span data-l="ru">task2.js</span><span data-l="kk">task2.js</span></a><h4><span data-l="en">Task 3 · Ticket form</span><span data-l="ru">Задание 3 · Форма билетов</span><span data-l="kk">3-тапсырма · Билет формасы</span></h4><a href="t3.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t3-html.html"><span data-l="en">task3.html</span><span data-l="ru">task3.html</span><span data-l="kk">task3.html</span></a><a href="t3-js.html"><span data-l="en">task3.js</span><span data-l="ru">task3.js</span><span data-l="kk">task3.js</span></a><h4><span data-l="en">Shared style</span><span data-l="ru">Общий стиль</span><span data-l="kk">Ортақ стиль</span></h4><a href="css.html"><span data-l="en">style.css</span><span data-l="ru">style.css</span><span data-l="kk">style.css</span></a><h4><span data-l="en">Preparation</span><span data-l="ru">Подготовка</span><span data-l="kk">Дайындық</span></h4><a href="live.html"><span data-l="en">⚡ Live coding</span><span data-l="ru">⚡ Live coding</span><span data-l="kk">⚡ Live coding</span></a><a href="tips.html"><span data-l="en">💡 Tips</span><span data-l="ru">💡 Лайфхаки</span><span data-l="kk">💡 Кеңестер</span></a></nav><main><h1><span data-l="en">task2.js</span><span data-l="ru">task2.js</span><span data-l="kk">task2.js</span></h1><p class="lead"><span data-l="en">Data → render() → page.</span><span data-l="ru">Данные → render() → страница.</span><span data-l="kk">Деректер → render() → бет.</span></p><section class="blk"><h3><span data-l="en">1. Constants and data</span><span data-l="ru">1. Константы и данные</span><span data-l="kk">1. Тұрақтылар мен деректер</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 3–28</small></h3><pre><span class="ln">3</span>/* ===== Task 2: Kanban board (Option A) =====
+<span class="ln">4</span>   The page is built from the &quot;initialTasks&quot; array. The HTML only has empty containers. */
+<span class="ln">5</span>
+<span class="ln">6</span>const COLUMNS = [
+<span class="ln">7</span>  { key: &#x27;todo&#x27;, title: &#x27;To do&#x27; },
+<span class="ln">8</span>  { key: &#x27;doing&#x27;, title: &#x27;In progress&#x27; },
+<span class="ln">9</span>  { key: &#x27;done&#x27;, title: &#x27;Done&#x27; }
+<span class="ln">10</span>];
+<span class="ln">11</span>const DOING_LIMIT = 3; // the middle column holds at most 3 cards
+<span class="ln">12</span>const ALL_TAGS = &#x27;all&#x27;;
+<span class="ln">13</span>
+<span class="ln">14</span>// priority: 1 = high, 2 = medium, 3 = low
+<span class="ln">15</span>const initialTasks = [
+<span class="ln">16</span>  { id: 1,  title: &#x27;Design landing page&#x27;,      tag: &#x27;design&#x27;,   priority: 1, hours: 6, urgent: true,  column: &#x27;todo&#x27; },
+<span class="ln">17</span>  { id: 2,  title: &#x27;Write login form&#x27;,          tag: &#x27;frontend&#x27;, priority: 1, hours: 4, urgent: true,  column: &#x27;doing&#x27; },
+<span class="ln">18</span>  { id: 3,  title: &#x27;Set up GitHub repository&#x27;,  tag: &#x27;devops&#x27;,   priority: 2, hours: 1, urgent: false, column: &#x27;done&#x27; },
+<span class="ln">19</span>  { id: 4,  title: &#x27;Create color palette&#x27;,      tag: &#x27;design&#x27;,   priority: 3, hours: 2, urgent: false, column: &#x27;done&#x27; },
+<span class="ln">20</span>  { id: 5,  title: &#x27;Validate email field&#x27;,      tag: &#x27;frontend&#x27;, priority: 2, hours: 3, urgent: false, column: &#x27;todo&#x27; },
+<span class="ln">21</span>  { id: 6,  title: &#x27;Write project README&#x27;,      tag: &#x27;docs&#x27;,     priority: 3, hours: 2, urgent: false, column: &#x27;todo&#x27; },
+<span class="ln">22</span>  { id: 7,  title: &#x27;Build navigation bar&#x27;,      tag: &#x27;frontend&#x27;, priority: 2, hours: 3, urgent: false, column: &#x27;doing&#x27; },
+<span class="ln">23</span>  { id: 8,  title: &#x27;Test on mobile screens&#x27;,    tag: &#x27;testing&#x27;,  priority: 1, hours: 5, urgent: true,  column: &#x27;todo&#x27; },
+<span class="ln">24</span>  { id: 9,  title: &#x27;Deploy to GitHub Pages&#x27;,    tag: &#x27;devops&#x27;,   priority: 2, hours: 1, urgent: false, column: &#x27;todo&#x27; },
+<span class="ln">25</span>  { id: 10, title: &#x27;Prepare presentation&#x27;,      tag: &#x27;docs&#x27;,     priority: 3, hours: 4, urgent: false, column: &#x27;todo&#x27; },
+<span class="ln">26</span>  { id: 11, title: &#x27;Fix footer layout bug&#x27;,     tag: &#x27;frontend&#x27;, priority: 2, hours: 1, urgent: false, column: &#x27;doing&#x27; },
+<span class="ln">27</span>  { id: 12, title: &#x27;Collect user feedback&#x27;,     tag: &#x27;testing&#x27;,  priority: 3, hours: 3, urgent: false, column: &#x27;done&#x27; }
+<span class="ln">28</span>];
+</pre><ul class="ex"><li><span data-l="en">COLUMNS: the three columns. <code>DOING_LIMIT = 3</code> is the limit.</span><span data-l="ru">COLUMNS: три колонки. <code>DOING_LIMIT = 3</code> лимит.</span><span data-l="kk">COLUMNS: үш баған. <code>DOING_LIMIT = 3</code> лимит.</span></li><li><span data-l="en"><code>initialTasks</code>: objects with id, title, tag, priority, hours, urgent, column.</span><span data-l="ru"><code>initialTasks</code>: объекты с id, title, tag, priority, hours, urgent, column.</span><span data-l="kk"><code>initialTasks</code>: id, title, tag, priority, hours, urgent, column бар объектілер.</span></li></ul></section><section class="blk"><h3><span data-l="en">2. State and elements</span><span data-l="ru">2. Состояние и элементы</span><span data-l="kk">2. Күй және элементтер</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 30–49</small></h3><pre><span class="ln">30</span>// ---------- state ----------
+<span class="ln">31</span>let tasks = initialTasks.map(function (t) { return Object.assign({}, t); });
+<span class="ln">32</span>let query = &#x27;&#x27;;
+<span class="ln">33</span>let tagFilter = ALL_TAGS;
+<span class="ln">34</span>let sortBy = &#x27;priority&#x27;;
+<span class="ln">35</span>let message = { text: &#x27;Ready. Pick a card and press a button.&#x27;, kind: &#x27;info&#x27; };
+<span class="ln">36</span>
+<span class="ln">37</span>// ---------- elements ----------
+<span class="ln">38</span>const boardEl = document.getElementById(&#x27;board&#x27;);
+<span class="ln">39</span>const searchEl = document.getElementById(&#x27;search&#x27;);
+<span class="ln">40</span>const tagEl = document.getElementById(&#x27;tagFilter&#x27;);
+<span class="ln">41</span>const sortEl = document.getElementById(&#x27;sortBy&#x27;);
+<span class="ln">42</span>const resetBtn = document.getElementById(&#x27;resetBtn&#x27;);
+<span class="ln">43</span>const progressBar = document.getElementById(&#x27;progressBar&#x27;);
+<span class="ln">44</span>const progressText = document.getElementById(&#x27;progressText&#x27;);
+<span class="ln">45</span>const hoursText = document.getElementById(&#x27;hoursText&#x27;);
+<span class="ln">46</span>const messageEl = document.getElementById(&#x27;message&#x27;);
+<span class="ln">47</span>const emptyEl = document.getElementById(&#x27;emptyState&#x27;);
+<span class="ln">48</span>
+<span class="ln">49</span>const PRIORITY_NAMES = { 1: &#x27;High&#x27;, 2: &#x27;Medium&#x27;, 3: &#x27;Low&#x27; };
+</pre><ul class="ex"><li><span data-l="en"><code>tasks</code> is a copy of the start data (<code>map</code> + <code>Object.assign</code>), so reset can restore it.</span><span data-l="ru"><code>tasks</code> копия начальных данных (<code>map</code> + <code>Object.assign</code>), чтобы сброс мог их вернуть.</span><span data-l="kk"><code>tasks</code> бастапқы деректердің көшірмесі (<code>map</code> + <code>Object.assign</code>), сондықтан тастау оларды қайтара алады.</span></li><li><span data-l="en">Filter, sort and message variables live next to it.</span><span data-l="ru">Рядом переменные фильтра, сортировки и сообщения.</span><span data-l="kk">Жанында сүзгі, сұрыптау және хабарлама айнымалылары тұр.</span></li></ul></section><section class="blk"><h3><span data-l="en">3. Helpers and own loops</span><span data-l="ru">3. Помощники и свои циклы</span><span data-l="kk">3. Көмекшілер және өз циклдері</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 51–101</small></h3><pre><span class="ln">51</span>// ---------- helpers ----------
+<span class="ln">52</span>function countInColumn(key) {
+<span class="ln">53</span>  let count = 0;
+<span class="ln">54</span>  for (const task of tasks) {
+<span class="ln">55</span>    if (task.column === key) {
+<span class="ln">56</span>      count += 1;
+<span class="ln">57</span>    }
+<span class="ln">58</span>  }
+<span class="ln">59</span>  return count;
+<span class="ln">60</span>}
+<span class="ln">61</span>
+<span class="ln">62</span>// my own loop: total hours of cards that are not finished yet
+<span class="ln">63</span>function remainingHours() {
+<span class="ln">64</span>  let total = 0;
+<span class="ln">65</span>  for (let i = 0; i &lt; tasks.length; i++) {
+<span class="ln">66</span>    if (tasks[i].column !== &#x27;done&#x27;) {
+<span class="ln">67</span>      total += tasks[i].hours;
+<span class="ln">68</span>    }
+<span class="ln">69</span>  }
+<span class="ln">70</span>  return total;
+<span class="ln">71</span>}
+<span class="ln">72</span>
+<span class="ln">73</span>function columnIndex(key) {
+<span class="ln">74</span>  for (let i = 0; i &lt; COLUMNS.length; i++) {
+<span class="ln">75</span>    if (COLUMNS[i].key === key) {
+<span class="ln">76</span>      return i;
+<span class="ln">77</span>    }
+<span class="ln">78</span>  }
+<span class="ln">79</span>  return -1;
+<span class="ln">80</span>}
+<span class="ln">81</span>
+<span class="ln">82</span>function matchesFilters(task) {
+<span class="ln">83</span>  const text = query.trim().toLowerCase();
+<span class="ln">84</span>  const titleOk = text === &#x27;&#x27; || task.title.toLowerCase().includes(text);
+<span class="ln">85</span>  const tagOk = tagFilter === ALL_TAGS || task.tag === tagFilter;
+<span class="ln">86</span>  return titleOk &amp;&amp; tagOk;
+<span class="ln">87</span>}
+<span class="ln">88</span>
+<span class="ln">89</span>function compareTasks(a, b) {
+<span class="ln">90</span>  if (sortBy === &#x27;hours&#x27;) {
+<span class="ln">91</span>    return a.hours - b.hours || a.title.localeCompare(b.title);
+<span class="ln">92</span>  }
+<span class="ln">93</span>  if (sortBy === &#x27;title&#x27;) {
+<span class="ln">94</span>    return a.title.localeCompare(b.title);
+<span class="ln">95</span>  }
+<span class="ln">96</span>  return a.priority - b.priority || a.title.localeCompare(b.title);
+<span class="ln">97</span>}
+<span class="ln">98</span>
+<span class="ln">99</span>function setMessage(text, kind) {
+<span class="ln">100</span>  message = { text: text, kind: kind };
+<span class="ln">101</span>}
+</pre><ul class="ex"><li><span data-l="en"><code>countInColumn</code> and <code>remainingHours</code> are loops written by hand.</span><span data-l="ru"><code>countInColumn</code> и <code>remainingHours</code> циклы, написанные вручную.</span><span data-l="kk"><code>countInColumn</code> және <code>remainingHours</code> қолмен жазылған циклдер.</span></li><li><span data-l="en"><code>matchesFilters</code>: title AND tag must match (<code>&amp;&amp;</code>).</span><span data-l="ru"><code>matchesFilters</code>: должны совпасть и название, и тег (<code>&amp;&amp;</code>).</span><span data-l="kk"><code>matchesFilters</code>: атау ЖӘНЕ тег сәйкес болуы керек (<code>&amp;&amp;</code>).</span></li><li><span data-l="en"><code>compareTasks</code> is the sort rule for <code>sort()</code>.</span><span data-l="ru"><code>compareTasks</code> правило сортировки для <code>sort()</code>.</span><span data-l="kk"><code>compareTasks</code> <code>sort()</code> үшін сұрыптау ережесі.</span></li></ul></section><section class="blk"><h3><span data-l="en">4. moveTask: the only data change</span><span data-l="ru">4. moveTask: единственное изменение данных</span><span data-l="kk">4. moveTask: деректің жалғыз өзгеруі</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 103–127</small></h3><pre><span class="ln">103</span>// ---------- the ONLY place that changes the data: move ----------
+<span class="ln">104</span>function moveTask(id, direction) {
+<span class="ln">105</span>  const task = tasks.find(function (t) { return t.id === id; });
+<span class="ln">106</span>  if (!task) {
+<span class="ln">107</span>    return;
+<span class="ln">108</span>  }
+<span class="ln">109</span>  const from = columnIndex(task.column);
+<span class="ln">110</span>  const to = from + direction;
+<span class="ln">111</span>
+<span class="ln">112</span>  if (to &lt; 0 || to &gt;= COLUMNS.length) {
+<span class="ln">113</span>    setMessage(&#x27;&quot;&#x27; + task.title + &#x27;&quot; cannot go further in that direction.&#x27;, &#x27;warn&#x27;);
+<span class="ln">114</span>    return;
+<span class="ln">115</span>  }
+<span class="ln">116</span>
+<span class="ln">117</span>  const target = COLUMNS[to].key;
+<span class="ln">118</span>
+<span class="ln">119</span>  // rule: the middle column holds at most DOING_LIMIT cards
+<span class="ln">120</span>  if (target === &#x27;doing&#x27; &amp;&amp; countInColumn(&#x27;doing&#x27;) &gt;= DOING_LIMIT) {
+<span class="ln">121</span>    setMessage(&#x27;Blocked: &quot;In progress&quot; already has &#x27; + DOING_LIMIT + &#x27; cards. Finish one of them first.&#x27;, &#x27;bad&#x27;);
+<span class="ln">122</span>    return;
+<span class="ln">123</span>  }
+<span class="ln">124</span>
+<span class="ln">125</span>  task.column = target;
+<span class="ln">126</span>  setMessage(&#x27;Moved &quot;&#x27; + task.title + &#x27;&quot; to &quot;&#x27; + COLUMNS[to].title + &#x27;&quot;.&#x27;, &#x27;ok&#x27;);
+<span class="ln">127</span>}
+</pre><ul class="ex"><li><span data-l="en"><code>find</code> gets the card; <code>to = from + direction</code> is the next column.</span><span data-l="ru"><code>find</code> находит карточку; <code>to = from + direction</code> следующая колонка.</span><span data-l="kk"><code>find</code> карточканы табады; <code>to = from + direction</code> келесі баған.</span></li><li><span data-l="en">Rule: if the target is “doing” and it already has the limit → message and <code>return</code>.</span><span data-l="ru">Правило: если цель «doing» и там уже лимит → сообщение и <code>return</code>.</span><span data-l="kk">Ереже: мақсат «doing» және лимит толса → хабарлама және <code>return</code>.</span></li><li><span data-l="en">Otherwise change <code>task.column</code>.</span><span data-l="ru">Иначе меняем <code>task.column</code>.</span><span data-l="kk">Әйтпесе <code>task.column</code> өзгереді.</span></li></ul></section><section class="blk"><h3><span data-l="en">5. render and createCard</span><span data-l="ru">5. render и createCard</span><span data-l="kk">5. render және createCard</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 129–253</small></h3><pre><span class="ln">129</span>// ---------- render: called after every change ----------
+<span class="ln">130</span>function render() {
+<span class="ln">131</span>  // 1. progress and hours (from ALL cards, not only the filtered ones)
+<span class="ln">132</span>  const doneCount = countInColumn(&#x27;done&#x27;);
+<span class="ln">133</span>  const percent = Math.round((doneCount / tasks.length) * 100);
+<span class="ln">134</span>  progressBar.value = percent;
+<span class="ln">135</span>  progressText.textContent = &#x27;Finished: &#x27; + doneCount + &#x27; of &#x27; + tasks.length + &#x27; cards (&#x27; + percent + &#x27;%)&#x27;;
+<span class="ln">136</span>  hoursText.textContent = &#x27;Hours left: &#x27; + remainingHours() + &#x27; h&#x27;;
+<span class="ln">137</span>
+<span class="ln">138</span>  // 2. message
+<span class="ln">139</span>  messageEl.textContent = message.text;
+<span class="ln">140</span>  messageEl.className = &#x27;message message--&#x27; + message.kind;
+<span class="ln">141</span>
+<span class="ln">142</span>  // 3. board
+<span class="ln">143</span>  boardEl.textContent = &#x27;&#x27;;
+<span class="ln">144</span>  let visibleTotal = 0;
+<span class="ln">145</span>
+<span class="ln">146</span>  for (const column of COLUMNS) {
+<span class="ln">147</span>    const section = document.createElement(&#x27;section&#x27;);
+<span class="ln">148</span>    section.className = &#x27;column&#x27;;
+<span class="ln">149</span>    const inColumn = countInColumn(column.key);
+<span class="ln">150</span>    if (column.key === &#x27;doing&#x27; &amp;&amp; inColumn &gt;= DOING_LIMIT) {
+<span class="ln">151</span>      section.classList.add(&#x27;column--full&#x27;);
+<span class="ln">152</span>    }
+<span class="ln">153</span>
+<span class="ln">154</span>    const head = document.createElement(&#x27;div&#x27;);
+<span class="ln">155</span>    head.className = &#x27;column__head&#x27;;
+<span class="ln">156</span>    const title = document.createElement(&#x27;h2&#x27;);
+<span class="ln">157</span>    title.className = &#x27;column__title&#x27;;
+<span class="ln">158</span>    title.textContent = column.title;
+<span class="ln">159</span>    const count = document.createElement(&#x27;span&#x27;);
+<span class="ln">160</span>    count.className = &#x27;column__count&#x27;;
+<span class="ln">161</span>    count.textContent = column.key === &#x27;doing&#x27; ? inColumn + &#x27; / &#x27; + DOING_LIMIT : String(inColumn);
+<span class="ln">162</span>    head.appendChild(title);
+<span class="ln">163</span>    head.appendChild(count);
+<span class="ln">164</span>    section.appendChild(head);
+<span class="ln">165</span>
+<span class="ln">166</span>    const visible = tasks.filter(function (t) { return t.column === column.key &amp;&amp; matchesFilters(t); });
+<span class="ln">167</span>    visible.sort(compareTasks);
+<span class="ln">168</span>    visibleTotal += visible.length;
+<span class="ln">169</span>
+<span class="ln">170</span>    if (visible.length === 0) {
+<span class="ln">171</span>      const empty = document.createElement(&#x27;p&#x27;);
+<span class="ln">172</span>      empty.className = &#x27;column__empty&#x27;;
+<span class="ln">173</span>      empty.textContent = &#x27;No cards here&#x27;;
+<span class="ln">174</span>      section.appendChild(empty);
+<span class="ln">175</span>    } else {
+<span class="ln">176</span>      const list = document.createElement(&#x27;ul&#x27;);
+<span class="ln">177</span>      list.className = &#x27;column__list&#x27;;
+<span class="ln">178</span>      for (const task of visible) {
+<span class="ln">179</span>        list.appendChild(createCard(task));
+<span class="ln">180</span>      }
+<span class="ln">181</span>      section.appendChild(list);
+<span class="ln">182</span>    }
+<span class="ln">183</span>
+<span class="ln">184</span>    boardEl.appendChild(section);
+<span class="ln">185</span>  }
+<span class="ln">186</span>
+<span class="ln">187</span>  // 4. nothing found
+<span class="ln">188</span>  emptyEl.classList.toggle(&#x27;hidden&#x27;, visibleTotal !== 0);
+<span class="ln">189</span>}
+<span class="ln">190</span>
+<span class="ln">191</span>function createCard(task) {
+<span class="ln">192</span>  const li = document.createElement(&#x27;li&#x27;);
+<span class="ln">193</span>  li.className = &#x27;task task--p&#x27; + task.priority;
+<span class="ln">194</span>  if (task.column === &#x27;done&#x27;) {
+<span class="ln">195</span>    li.classList.add(&#x27;task--done&#x27;);
+<span class="ln">196</span>  }
+<span class="ln">197</span>  li.dataset.id = String(task.id);
+<span class="ln">198</span>
+<span class="ln">199</span>  const title = document.createElement(&#x27;p&#x27;);
+<span class="ln">200</span>  title.className = &#x27;task__title&#x27;;
+<span class="ln">201</span>  title.textContent = task.title;
+<span class="ln">202</span>
+<span class="ln">203</span>  const meta = document.createElement(&#x27;div&#x27;);
+<span class="ln">204</span>  meta.className = &#x27;task__meta&#x27;;
+<span class="ln">205</span>  const tag = document.createElement(&#x27;span&#x27;);
+<span class="ln">206</span>  tag.className = &#x27;badge&#x27;;
+<span class="ln">207</span>  tag.textContent = &#x27;#&#x27; + task.tag;
+<span class="ln">208</span>  const prio = document.createElement(&#x27;span&#x27;);
+<span class="ln">209</span>  prio.className = &#x27;badge&#x27;;
+<span class="ln">210</span>  prio.textContent = PRIORITY_NAMES[task.priority] + &#x27; priority&#x27;;
+<span class="ln">211</span>  const hours = document.createElement(&#x27;span&#x27;);
+<span class="ln">212</span>  hours.className = &#x27;badge badge--hours&#x27;;
+<span class="ln">213</span>  hours.textContent = task.hours + &#x27; h&#x27;;
+<span class="ln">214</span>  meta.appendChild(tag);
+<span class="ln">215</span>  meta.appendChild(prio);
+<span class="ln">216</span>  meta.appendChild(hours);
+<span class="ln">217</span>  if (task.urgent) {
+<span class="ln">218</span>    const urgent = document.createElement(&#x27;span&#x27;);
+<span class="ln">219</span>    urgent.className = &#x27;badge badge--urgent&#x27;;
+<span class="ln">220</span>    urgent.textContent = &#x27;Urgent&#x27;;
+<span class="ln">221</span>    meta.appendChild(urgent);
+<span class="ln">222</span>  }
+<span class="ln">223</span>
+<span class="ln">224</span>  const actions = document.createElement(&#x27;div&#x27;);
+<span class="ln">225</span>  actions.className = &#x27;task__actions&#x27;;
+<span class="ln">226</span>  const index = columnIndex(task.column);
+<span class="ln">227</span>
+<span class="ln">228</span>  const back = document.createElement(&#x27;button&#x27;);
+<span class="ln">229</span>  back.type = &#x27;button&#x27;;
+<span class="ln">230</span>  back.className = &#x27;btn btn--ghost btn--small&#x27;;
+<span class="ln">231</span>  back.dataset.action = &#x27;back&#x27;;
+<span class="ln">232</span>  back.dataset.id = String(task.id);
+<span class="ln">233</span>  back.textContent = &#x27;← Back&#x27;;
+<span class="ln">234</span>  back.disabled = index === 0;
+<span class="ln">235</span>  back.setAttribute(&#x27;aria-label&#x27;, &#x27;Move &quot;&#x27; + task.title + &#x27;&quot; back&#x27;);
+<span class="ln">236</span>
+<span class="ln">237</span>  const forward = document.createElement(&#x27;button&#x27;);
+<span class="ln">238</span>  forward.type = &#x27;button&#x27;;
+<span class="ln">239</span>  forward.className = &#x27;btn btn--small&#x27;;
+<span class="ln">240</span>  forward.dataset.action = &#x27;forward&#x27;;
+<span class="ln">241</span>  forward.dataset.id = String(task.id);
+<span class="ln">242</span>  forward.textContent = &#x27;Forward →&#x27;;
+<span class="ln">243</span>  forward.disabled = index === COLUMNS.length - 1;
+<span class="ln">244</span>  forward.setAttribute(&#x27;aria-label&#x27;, &#x27;Move &quot;&#x27; + task.title + &#x27;&quot; forward&#x27;);
+<span class="ln">245</span>
+<span class="ln">246</span>  actions.appendChild(back);
+<span class="ln">247</span>  actions.appendChild(forward);
+<span class="ln">248</span>
+<span class="ln">249</span>  li.appendChild(title);
+<span class="ln">250</span>  li.appendChild(meta);
+<span class="ln">251</span>  li.appendChild(actions);
+<span class="ln">252</span>  return li;
+<span class="ln">253</span>}
+</pre><ul class="ex"><li><span data-l="en"><code>render</code> rebuilds progress, columns and the “nothing found” message from the data.</span><span data-l="ru"><code>render</code> заново строит прогресс, колонки и сообщение «ничего не найдено» по данным.</span><span data-l="kk"><code>render</code> прогресті, бағандарды және «ештеңе табылмады» хабарламасын деректен қайта құрады.</span></li><li><span data-l="en"><code>createCard</code> uses <code>createElement</code> and <code>textContent</code> (no innerHTML) and sets <code>data-id</code>, <code>data-action</code>.</span><span data-l="ru"><code>createCard</code> использует <code>createElement</code> и <code>textContent</code> (без innerHTML) и ставит <code>data-id</code>, <code>data-action</code>.</span><span data-l="kk"><code>createCard</code> <code>createElement</code> және <code>textContent</code> (innerHTML жоқ) қолданып, <code>data-id</code>, <code>data-action</code> қояды.</span></li></ul></section><section class="blk"><h3><span data-l="en">6. Tag options from data</span><span data-l="ru">6. Теги из данных</span><span data-l="kk">6. Деректен тег опциялары</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 255–275</small></h3><pre><span class="ln">255</span>// ---------- tag filter options built from the data ----------
+<span class="ln">256</span>function fillTagOptions() {
+<span class="ln">257</span>  const tags = [];
+<span class="ln">258</span>  for (const task of initialTasks) {
+<span class="ln">259</span>    if (!tags.includes(task.tag)) {
+<span class="ln">260</span>      tags.push(task.tag);
+<span class="ln">261</span>    }
+<span class="ln">262</span>  }
+<span class="ln">263</span>  tags.sort();
+<span class="ln">264</span>  tagEl.textContent = &#x27;&#x27;;
+<span class="ln">265</span>  const all = document.createElement(&#x27;option&#x27;);
+<span class="ln">266</span>  all.value = ALL_TAGS;
+<span class="ln">267</span>  all.textContent = &#x27;All tags&#x27;;
+<span class="ln">268</span>  tagEl.appendChild(all);
+<span class="ln">269</span>  for (const tag of tags) {
+<span class="ln">270</span>    const option = document.createElement(&#x27;option&#x27;);
+<span class="ln">271</span>    option.value = tag;
+<span class="ln">272</span>    option.textContent = &#x27;#&#x27; + tag;
+<span class="ln">273</span>    tagEl.appendChild(option);
+<span class="ln">274</span>  }
+<span class="ln">275</span>}
+</pre><ul class="ex"><li><span data-l="en">Unique tags are collected from the array and added as options.</span><span data-l="ru">Уникальные теги собираются из массива и добавляются как опции.</span><span data-l="kk">Бірегей тегтер массивтен жиналып, опция ретінде қосылады.</span></li></ul></section><section class="blk"><h3><span data-l="en">7. Events</span><span data-l="ru">7. События</span><span data-l="kk">7. Оқиғалар</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 277–326</small></h3><pre><span class="ln">277</span>// ---------- events ----------
+<span class="ln">278</span>// ONE listener on the container for the buttons of all cards (event delegation)
+<span class="ln">279</span>boardEl.addEventListener(&#x27;click&#x27;, function (event) {
+<span class="ln">280</span>  const button = event.target.closest(&#x27;button[data-action]&#x27;);
+<span class="ln">281</span>  if (!button || !boardEl.contains(button) || button.disabled) {
+<span class="ln">282</span>    return;
+<span class="ln">283</span>  }
+<span class="ln">284</span>  const id = Number(button.dataset.id);
+<span class="ln">285</span>  const direction = button.dataset.action === &#x27;forward&#x27; ? 1 : -1;
+<span class="ln">286</span>  moveTask(id, direction);
+<span class="ln">287</span>  render();
+<span class="ln">288</span>  // keep keyboard focus near the moved card
+<span class="ln">289</span>  const moved = boardEl.querySelector(&#x27;li[data-id=&quot;&#x27; + id + &#x27;&quot;] button[data-action=&quot;&#x27; + button.dataset.action + &#x27;&quot;]&#x27;);
+<span class="ln">290</span>  if (moved &amp;&amp; !moved.disabled) {
+<span class="ln">291</span>    moved.focus();
+<span class="ln">292</span>  }
+<span class="ln">293</span>});
+<span class="ln">294</span>
+<span class="ln">295</span>searchEl.addEventListener(&#x27;input&#x27;, function () {
+<span class="ln">296</span>  query = searchEl.value;
+<span class="ln">297</span>  setMessage(query.trim() === &#x27;&#x27; &amp;&amp; tagFilter === ALL_TAGS ? &#x27;Showing all cards.&#x27; : &#x27;Filter applied.&#x27;, &#x27;info&#x27;);
+<span class="ln">298</span>  render();
+<span class="ln">299</span>});
+<span class="ln">300</span>
+<span class="ln">301</span>tagEl.addEventListener(&#x27;change&#x27;, function () {
+<span class="ln">302</span>  tagFilter = tagEl.value;
+<span class="ln">303</span>  setMessage(tagFilter === ALL_TAGS &amp;&amp; query.trim() === &#x27;&#x27; ? &#x27;Showing all cards.&#x27; : &#x27;Filter applied.&#x27;, &#x27;info&#x27;);
+<span class="ln">304</span>  render();
+<span class="ln">305</span>});
+<span class="ln">306</span>
+<span class="ln">307</span>sortEl.addEventListener(&#x27;change&#x27;, function () {
+<span class="ln">308</span>  sortBy = sortEl.value;
+<span class="ln">309</span>  setMessage(&#x27;Cards sorted.&#x27;, &#x27;info&#x27;);
+<span class="ln">310</span>  render();
+<span class="ln">311</span>});
+<span class="ln">312</span>
+<span class="ln">313</span>resetBtn.addEventListener(&#x27;click&#x27;, function () {
+<span class="ln">314</span>  tasks = initialTasks.map(function (t) { return Object.assign({}, t); });
+<span class="ln">315</span>  query = &#x27;&#x27;;
+<span class="ln">316</span>  tagFilter = ALL_TAGS;
+<span class="ln">317</span>  sortBy = &#x27;priority&#x27;;
+<span class="ln">318</span>  searchEl.value = &#x27;&#x27;;
+<span class="ln">319</span>  tagEl.value = ALL_TAGS;
+<span class="ln">320</span>  sortEl.value = &#x27;priority&#x27;;
+<span class="ln">321</span>  setMessage(&#x27;Board reset to the start data.&#x27;, &#x27;info&#x27;);
+<span class="ln">322</span>  render();
+<span class="ln">323</span>});
+<span class="ln">324</span>
+<span class="ln">325</span>fillTagOptions();
+<span class="ln">326</span>render();
+</pre><ul class="ex"><li><span data-l="en">One delegated <code>click</code> on the board for all card buttons.</span><span data-l="ru">Один делегированный <code>click</code> на доске для всех кнопок карточек.</span><span data-l="kk">Барлық карточка түймелері үшін тақтада бір делегирленген <code>click</code>.</span></li><li><span data-l="en"><code>input</code> / <code>change</code> on search, tag and sort update variables and call <code>render()</code>.</span><span data-l="ru"><code>input</code> / <code>change</code> у поиска, тега и сортировки обновляют переменные и вызывают <code>render()</code>.</span><span data-l="kk">Іздеу, тег және сұрыптаудағы <code>input</code> / <code>change</code> айнымалыларды жаңартып, <code>render()</code> шақырады.</span></li><li><span data-l="en">Reset restores the start data.</span><span data-l="ru">Сброс возвращает начальные данные.</span><span data-l="kk">Тастау бастапқы деректі қайтарады.</span></li></ul></section></main></div><script>var L;try{L=localStorage.getItem("lang")}catch(e){}L=L||"ru";function s(l){document.body.dataset.lang=l;document.documentElement.lang=l;try{localStorage.setItem("lang",l)}catch(e){}document.querySelectorAll(".sw button").forEach(function(b){b.classList.toggle("on",b.dataset.set===l)})}document.querySelectorAll(".sw button").forEach(function(b){b.onclick=function(){s(b.dataset.set)}});s(L);</script></body></html>

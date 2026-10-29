@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Assignment 5 · Aruzhan</title><style>*{box-sizing:border-box}body{margin:0;font:16px/1.65 "Segoe UI",system-ui,sans-serif;background:#0d1024;color:#e6e9ff}
+a{color:#8fa0ff}code{background:#232850;padding:1px 6px;border-radius:6px;color:#7ff0d4;font-size:.9em}
+.app{display:grid;grid-template-columns:270px minmax(0,1fr);min-height:100vh}
+nav{background:#12163a;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto;border-right:1px solid #262b5c}
+nav h4{margin:18px 8px 6px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7b84c9}
+nav a{display:block;padding:7px 12px;border-radius:10px;color:#cdd3ff;text-decoration:none}nav a:hover{background:#1e2452}
+nav a.on{background:linear-gradient(90deg,#5468ff,#8a5cff);color:#fff}
+main{padding:32px clamp(16px,4vw,56px);max-width:1000px;overflow-wrap:anywhere}
+h1{font-size:2rem;margin:0 0 6px;background:linear-gradient(90deg,#8fa0ff,#7ff0d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{margin:30px 0 8px;color:#fff}.lead{color:#a9b1e8}
+.hero{padding:30px;border-radius:20px;background:linear-gradient(135deg,#3a4bd8,#8a5cff 60%,#12b5a0);margin-bottom:24px}.hero h1{background:none;color:#fff;-webkit-text-fill-color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:#161a40;border:1px solid #262b5c;border-radius:16px;padding:16px;transition:.15s}.card:hover{transform:translateY(-3px);border-color:#5468ff}
+.card h3{margin:0 0 6px}.tag{display:inline-block;font-size:.75rem;padding:2px 10px;border-radius:99px;background:#2a3070;color:#bcc5ff;margin:2px}
+.blk{background:#141838;border:1px solid #262b5c;border-radius:16px;margin:20px 0;overflow:hidden}
+.blk h3{margin:0;padding:12px 16px;background:#1a1f4a}.blk small{color:#8d96d8;font-weight:400}
+pre{margin:0;padding:14px 0;overflow-x:auto;font:13px/1.6 Consolas,Menlo,monospace;background:#0a0d20;color:#d7dcff}
+.ln{display:inline-block;width:3.4em;text-align:right;padding-right:14px;color:#566;user-select:none}
+.ex{margin:0;padding:12px 16px 12px 34px;border-top:1px solid #262b5c}.ex li{margin:5px 0}
+.box{border-left:4px solid #7ff0d4;background:#12223a;padding:10px 16px;border-radius:0 12px 12px 0;margin:12px 0}
+.warn{border-color:#ffb703;background:#2a2410}
+@media(max-width:800px){.app{grid-template-columns:minmax(0,1fr)}nav{position:static;height:auto}}
+.sw{display:flex;gap:6px;margin:0 8px 10px}.sw button{flex:1;padding:8px;border:1px solid #3a4180;background:#1a1f4a;color:#cdd3ff;border-radius:10px;cursor:pointer;font-weight:600;font-size:.9rem;font-family:inherit}.sw button.on{background:linear-gradient(90deg,#5468ff,#8a5cff);color:#fff;border-color:transparent}.sw button:focus-visible{outline:3px solid #ffb703}
+body[data-lang="en"] [data-l]:not([data-l="en"]),body[data-lang="ru"] [data-l]:not([data-l="ru"]),body[data-lang="kk"] [data-l]:not([data-l="kk"]){display:none}
+</style></head><body data-lang="ru"><div class="app"><nav><div class="sw"><button data-set="en">EN</button><button data-set="ru">RU</button><button data-set="kk">ҚАЗ</button></div><a href="index.html"><span data-l="en">🏠 Home</span><span data-l="ru">🏠 Главная</span><span data-l="kk">🏠 Басты бет</span></a><a href="basics.html"><span data-l="en">🧠 Basics from zero</span><span data-l="ru">🧠 Основы с нуля</span><span data-l="kk">🧠 Негіздер (нөлден)</span></a><h4><span data-l="en">Task 1 · Higher or Lower</span><span data-l="ru">Задание 1 · Выше или ниже</span><span data-l="kk">1-тапсырма · Жоғары/төмен</span></h4><a href="t1.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t1-html.html"><span data-l="en">task1.html</span><span data-l="ru">task1.html</span><span data-l="kk">task1.html</span></a><a href="t1-js.html"><span data-l="en">task1.js</span><span data-l="ru">task1.js</span><span data-l="kk">task1.js</span></a><h4><span data-l="en">Task 2 · Kanban</span><span data-l="ru">Задание 2 · Канбан</span><span data-l="kk">2-тапсырма · Канбан</span></h4><a href="t2.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t2-html.html"><span data-l="en">task2.html</span><span data-l="ru">task2.html</span><span data-l="kk">task2.html</span></a><a href="t2-js.html"><span data-l="en">task2.js</span><span data-l="ru">task2.js</span><span data-l="kk">task2.js</span></a><h4><span data-l="en">Task 3 · Ticket form</span><span data-l="ru">Задание 3 · Форма билетов</span><span data-l="kk">3-тапсырма · Билет формасы</span></h4><a href="t3.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t3-html.html" class="on"><span data-l="en">task3.html</span><span data-l="ru">task3.html</span><span data-l="kk">task3.html</span></a><a href="t3-js.html"><span data-l="en">task3.js</span><span data-l="ru">task3.js</span><span data-l="kk">task3.js</span></a><h4><span data-l="en">Shared style</span><span data-l="ru">Общий стиль</span><span data-l="kk">Ортақ стиль</span></h4><a href="css.html"><span data-l="en">style.css</span><span data-l="ru">style.css</span><span data-l="kk">style.css</span></a><h4><span data-l="en">Preparation</span><span data-l="ru">Подготовка</span><span data-l="kk">Дайындық</span></h4><a href="live.html"><span data-l="en">⚡ Live coding</span><span data-l="ru">⚡ Live coding</span><span data-l="kk">⚡ Live coding</span></a><a href="tips.html"><span data-l="en">💡 Tips</span><span data-l="ru">💡 Лайфхаки</span><span data-l="kk">💡 Кеңестер</span></a></nav><main><h1><span data-l="en">task3.html</span><span data-l="ru">task3.html</span><span data-l="kk">task3.html</span></h1><p class="lead"><span data-l="en">The form with empty selects and empty error lines.</span><span data-l="ru">Форма с пустыми select и пустыми строками ошибок.</span><span data-l="kk">Бос select және бос қате жолдары бар форма.</span></p><section class="blk"><h3><span data-l="en">Page body</span><span data-l="ru">Тело страницы</span><span data-l="kk">Бет денесі</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 10–98</small></h3><pre><span class="ln">10</span>&lt;body&gt;
+<span class="ln">11</span>  &lt;header class=&quot;site-header&quot;&gt;
+<span class="ln">12</span>    &lt;div class=&quot;site-header__inner&quot;&gt;
+<span class="ln">13</span>      &lt;a class=&quot;brand&quot; href=&quot;index.html&quot;&gt;Assignment 5&lt;/a&gt;
+<span class="ln">14</span>      &lt;nav class=&quot;nav&quot; aria-label=&quot;Main&quot;&gt;
+<span class="ln">15</span>        &lt;a href=&quot;index.html&quot;&gt;Home&lt;/a&gt;
+<span class="ln">16</span>        &lt;a href=&quot;task1.html&quot;&gt;Task 1&lt;/a&gt;
+<span class="ln">17</span>        &lt;a href=&quot;task2.html&quot;&gt;Task 2&lt;/a&gt;
+<span class="ln">18</span>        &lt;a href=&quot;task3.html&quot; aria-current=&quot;page&quot;&gt;Task 3&lt;/a&gt;
+<span class="ln">19</span>      &lt;/nav&gt;
+<span class="ln">20</span>    &lt;/div&gt;
+<span class="ln">21</span>  &lt;/header&gt;
+<span class="ln">22</span>
+<span class="ln">23</span>  &lt;main class=&quot;container&quot;&gt;
+<span class="ln">24</span>    &lt;h1&gt;Ticket builder&lt;/h1&gt;
+<span class="ln">25</span>    &lt;p class=&quot;lead&quot;&gt;Fill in the form. The ticket on the right changes while you type. Every field is checked when you leave it and then on every change.&lt;/p&gt;
+<span class="ln">26</span>
+<span class="ln">27</span>    &lt;div class=&quot;layout&quot;&gt;
+<span class="ln">28</span>      &lt;section class=&quot;card&quot; aria-labelledby=&quot;formTitle&quot;&gt;
+<span class="ln">29</span>        &lt;h2 id=&quot;formTitle&quot;&gt;Book your ticket&lt;/h2&gt;
+<span class="ln">30</span>
+<span class="ln">31</span>        &lt;div class=&quot;message message--bad summary hidden&quot; id=&quot;summary&quot; role=&quot;alert&quot; tabindex=&quot;-1&quot;&gt;&lt;/div&gt;
+<span class="ln">32</span>
+<span class="ln">33</span>        &lt;form id=&quot;ticketForm&quot; novalidate&gt;
+<span class="ln">34</span>          &lt;div class=&quot;form-grid&quot;&gt;
+<span class="ln">35</span>            &lt;div class=&quot;field field--wide&quot; data-field=&quot;event&quot;&gt;
+<span class="ln">36</span>              &lt;label class=&quot;field__label&quot; for=&quot;event&quot;&gt;Event&lt;/label&gt;
+<span class="ln">37</span>              &lt;select class=&quot;field__control&quot; id=&quot;event&quot; name=&quot;event&quot; required aria-describedby=&quot;event-error&quot;&gt;&lt;/select&gt;
+<span class="ln">38</span>              &lt;span class=&quot;field__error&quot; id=&quot;event-error&quot;&gt;&lt;/span&gt;
+<span class="ln">39</span>            &lt;/div&gt;
+<span class="ln">40</span>
+<span class="ln">41</span>            &lt;div class=&quot;field&quot; data-field=&quot;date&quot;&gt;
+<span class="ln">42</span>              &lt;label class=&quot;field__label&quot; for=&quot;date&quot;&gt;Date&lt;/label&gt;
+<span class="ln">43</span>              &lt;input class=&quot;field__control&quot; id=&quot;date&quot; name=&quot;date&quot; type=&quot;date&quot; required aria-describedby=&quot;date-hint date-error&quot;&gt;
+<span class="ln">44</span>              &lt;span class=&quot;field__hint&quot; id=&quot;date-hint&quot;&gt;Up to 120 days ahead&lt;/span&gt;
+<span class="ln">45</span>              &lt;span class=&quot;field__error&quot; id=&quot;date-error&quot;&gt;&lt;/span&gt;
+<span class="ln">46</span>            &lt;/div&gt;
+<span class="ln">47</span>
+<span class="ln">48</span>            &lt;div class=&quot;field&quot; data-field=&quot;type&quot;&gt;
+<span class="ln">49</span>              &lt;label class=&quot;field__label&quot; for=&quot;type&quot;&gt;Ticket type&lt;/label&gt;
+<span class="ln">50</span>              &lt;select class=&quot;field__control&quot; id=&quot;type&quot; name=&quot;type&quot; required aria-describedby=&quot;type-error&quot;&gt;&lt;/select&gt;
+<span class="ln">51</span>              &lt;span class=&quot;field__error&quot; id=&quot;type-error&quot;&gt;&lt;/span&gt;
+<span class="ln">52</span>            &lt;/div&gt;
+<span class="ln">53</span>
+<span class="ln">54</span>            &lt;div class=&quot;field&quot; data-field=&quot;quantity&quot;&gt;
+<span class="ln">55</span>              &lt;label class=&quot;field__label&quot; for=&quot;quantity&quot;&gt;Quantity&lt;/label&gt;
+<span class="ln">56</span>              &lt;input class=&quot;field__control&quot; id=&quot;quantity&quot; name=&quot;quantity&quot; type=&quot;number&quot; min=&quot;1&quot; max=&quot;10&quot; step=&quot;1&quot; required inputmode=&quot;numeric&quot; aria-describedby=&quot;quantity-hint quantity-error&quot;&gt;
+<span class="ln">57</span>              &lt;span class=&quot;field__hint&quot; id=&quot;quantity-hint&quot;&gt;From 1 to 10 tickets&lt;/span&gt;
+<span class="ln">58</span>              &lt;span class=&quot;field__error&quot; id=&quot;quantity-error&quot;&gt;&lt;/span&gt;
+<span class="ln">59</span>            &lt;/div&gt;
+<span class="ln">60</span>
+<span class="ln">61</span>            &lt;div class=&quot;field&quot; data-field=&quot;promo&quot;&gt;
+<span class="ln">62</span>              &lt;label class=&quot;field__label&quot; for=&quot;promo&quot;&gt;Promo code (optional)&lt;/label&gt;
+<span class="ln">63</span>              &lt;input class=&quot;field__control&quot; id=&quot;promo&quot; name=&quot;promo&quot; type=&quot;text&quot; maxlength=&quot;20&quot; autocomplete=&quot;off&quot; aria-describedby=&quot;promo-error&quot;&gt;
+<span class="ln">64</span>              &lt;span class=&quot;field__error&quot; id=&quot;promo-error&quot;&gt;&lt;/span&gt;
+<span class="ln">65</span>            &lt;/div&gt;
+<span class="ln">66</span>
+<span class="ln">67</span>            &lt;div class=&quot;field&quot; data-field=&quot;name&quot;&gt;
+<span class="ln">68</span>              &lt;label class=&quot;field__label&quot; for=&quot;name&quot;&gt;Full name&lt;/label&gt;
+<span class="ln">69</span>              &lt;input class=&quot;field__control&quot; id=&quot;name&quot; name=&quot;name&quot; type=&quot;text&quot; required minlength=&quot;3&quot; maxlength=&quot;60&quot; autocomplete=&quot;name&quot; aria-describedby=&quot;name-hint name-error&quot;&gt;
+<span class="ln">70</span>              &lt;span class=&quot;field__hint&quot; id=&quot;name-hint&quot;&gt;Name and surname&lt;/span&gt;
+<span class="ln">71</span>              &lt;span class=&quot;field__error&quot; id=&quot;name-error&quot;&gt;&lt;/span&gt;
+<span class="ln">72</span>            &lt;/div&gt;
+<span class="ln">73</span>
+<span class="ln">74</span>            &lt;div class=&quot;field&quot; data-field=&quot;email&quot;&gt;
+<span class="ln">75</span>              &lt;label class=&quot;field__label&quot; for=&quot;email&quot;&gt;Email&lt;/label&gt;
+<span class="ln">76</span>              &lt;input class=&quot;field__control&quot; id=&quot;email&quot; name=&quot;email&quot; type=&quot;email&quot; required autocomplete=&quot;email&quot; aria-describedby=&quot;email-error&quot;&gt;
+<span class="ln">77</span>              &lt;span class=&quot;field__error&quot; id=&quot;email-error&quot;&gt;&lt;/span&gt;
+<span class="ln">78</span>            &lt;/div&gt;
+<span class="ln">79</span>          &lt;/div&gt;
+<span class="ln">80</span>
+<span class="ln">81</span>          &lt;div class=&quot;form-actions&quot;&gt;
+<span class="ln">82</span>            &lt;button type=&quot;submit&quot; class=&quot;btn&quot;&gt;Book ticket&lt;/button&gt;
+<span class="ln">83</span>            &lt;button type=&quot;reset&quot; class=&quot;btn btn--ghost&quot; id=&quot;resetBtn&quot;&gt;Clear form&lt;/button&gt;
+<span class="ln">84</span>          &lt;/div&gt;
+<span class="ln">85</span>        &lt;/form&gt;
+<span class="ln">86</span>      &lt;/section&gt;
+<span class="ln">87</span>
+<span class="ln">88</span>      &lt;aside aria-labelledby=&quot;previewTitle&quot;&gt;
+<span class="ln">89</span>        &lt;h2 id=&quot;previewTitle&quot;&gt;Ticket preview&lt;/h2&gt;
+<span class="ln">90</span>        &lt;div class=&quot;ticket&quot; id=&quot;preview&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+<span class="ln">91</span>        &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+<span class="ln">92</span>      &lt;/aside&gt;
+<span class="ln">93</span>    &lt;/div&gt;
+<span class="ln">94</span>  &lt;/main&gt;
+<span class="ln">95</span>
+<span class="ln">96</span>  &lt;footer class=&quot;footer&quot;&gt;Zhaksylyk Aruzhan, group IT-2511, Astana IT University&lt;/footer&gt;
+<span class="ln">97</span>&lt;/body&gt;
+<span class="ln">98</span>&lt;/html&gt;
+</pre><ul class="ex"><li><span data-l="en">HTML attributes (required, min, max, type) stay; JS adds the rest.</span><span data-l="ru">Атрибуты HTML (required, min, max, type) остаются; остальное добавляет JS.</span><span data-l="kk">HTML атрибуттары (required, min, max, type) қалады; қалғанын JS қосады.</span></li><li><span data-l="en">Error lines are empty on load: there are no errors at the start.</span><span data-l="ru">Строки ошибок пусты при загрузке: в начале ошибок нет.</span><span data-l="kk">Қате жолдары жүктегенде бос: басында қате жоқ.</span></li></ul></section></main></div><script>var L;try{L=localStorage.getItem("lang")}catch(e){}L=L||"ru";function s(l){document.body.dataset.lang=l;document.documentElement.lang=l;try{localStorage.setItem("lang",l)}catch(e){}document.querySelectorAll(".sw button").forEach(function(b){b.classList.toggle("on",b.dataset.set===l)})}document.querySelectorAll(".sw button").forEach(function(b){b.onclick=function(){s(b.dataset.set)}});s(L);</script></body></html>

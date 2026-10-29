@@ -1,0 +1,441 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Assignment 5 · Aruzhan</title><style>*{box-sizing:border-box}body{margin:0;font:16px/1.65 "Segoe UI",system-ui,sans-serif;background:#0d1024;color:#e6e9ff}
+a{color:#8fa0ff}code{background:#232850;padding:1px 6px;border-radius:6px;color:#7ff0d4;font-size:.9em}
+.app{display:grid;grid-template-columns:270px minmax(0,1fr);min-height:100vh}
+nav{background:#12163a;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto;border-right:1px solid #262b5c}
+nav h4{margin:18px 8px 6px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7b84c9}
+nav a{display:block;padding:7px 12px;border-radius:10px;color:#cdd3ff;text-decoration:none}nav a:hover{background:#1e2452}
+nav a.on{background:linear-gradient(90deg,#5468ff,#8a5cff);color:#fff}
+main{padding:32px clamp(16px,4vw,56px);max-width:1000px;overflow-wrap:anywhere}
+h1{font-size:2rem;margin:0 0 6px;background:linear-gradient(90deg,#8fa0ff,#7ff0d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{margin:30px 0 8px;color:#fff}.lead{color:#a9b1e8}
+.hero{padding:30px;border-radius:20px;background:linear-gradient(135deg,#3a4bd8,#8a5cff 60%,#12b5a0);margin-bottom:24px}.hero h1{background:none;color:#fff;-webkit-text-fill-color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:#161a40;border:1px solid #262b5c;border-radius:16px;padding:16px;transition:.15s}.card:hover{transform:translateY(-3px);border-color:#5468ff}
+.card h3{margin:0 0 6px}.tag{display:inline-block;font-size:.75rem;padding:2px 10px;border-radius:99px;background:#2a3070;color:#bcc5ff;margin:2px}
+.blk{background:#141838;border:1px solid #262b5c;border-radius:16px;margin:20px 0;overflow:hidden}
+.blk h3{margin:0;padding:12px 16px;background:#1a1f4a}.blk small{color:#8d96d8;font-weight:400}
+pre{margin:0;padding:14px 0;overflow-x:auto;font:13px/1.6 Consolas,Menlo,monospace;background:#0a0d20;color:#d7dcff}
+.ln{display:inline-block;width:3.4em;text-align:right;padding-right:14px;color:#566;user-select:none}
+.ex{margin:0;padding:12px 16px 12px 34px;border-top:1px solid #262b5c}.ex li{margin:5px 0}
+.box{border-left:4px solid #7ff0d4;background:#12223a;padding:10px 16px;border-radius:0 12px 12px 0;margin:12px 0}
+.warn{border-color:#ffb703;background:#2a2410}
+@media(max-width:800px){.app{grid-template-columns:minmax(0,1fr)}nav{position:static;height:auto}}
+.sw{display:flex;gap:6px;margin:0 8px 10px}.sw button{flex:1;padding:8px;border:1px solid #3a4180;background:#1a1f4a;color:#cdd3ff;border-radius:10px;cursor:pointer;font-weight:600;font-size:.9rem;font-family:inherit}.sw button.on{background:linear-gradient(90deg,#5468ff,#8a5cff);color:#fff;border-color:transparent}.sw button:focus-visible{outline:3px solid #ffb703}
+body[data-lang="en"] [data-l]:not([data-l="en"]),body[data-lang="ru"] [data-l]:not([data-l="ru"]),body[data-lang="kk"] [data-l]:not([data-l="kk"]){display:none}
+</style></head><body data-lang="ru"><div class="app"><nav><div class="sw"><button data-set="en">EN</button><button data-set="ru">RU</button><button data-set="kk">ҚАЗ</button></div><a href="index.html"><span data-l="en">🏠 Home</span><span data-l="ru">🏠 Главная</span><span data-l="kk">🏠 Басты бет</span></a><a href="basics.html"><span data-l="en">🧠 Basics from zero</span><span data-l="ru">🧠 Основы с нуля</span><span data-l="kk">🧠 Негіздер (нөлден)</span></a><h4><span data-l="en">Task 1 · Higher or Lower</span><span data-l="ru">Задание 1 · Выше или ниже</span><span data-l="kk">1-тапсырма · Жоғары/төмен</span></h4><a href="t1.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t1-html.html"><span data-l="en">task1.html</span><span data-l="ru">task1.html</span><span data-l="kk">task1.html</span></a><a href="t1-js.html"><span data-l="en">task1.js</span><span data-l="ru">task1.js</span><span data-l="kk">task1.js</span></a><h4><span data-l="en">Task 2 · Kanban</span><span data-l="ru">Задание 2 · Канбан</span><span data-l="kk">2-тапсырма · Канбан</span></h4><a href="t2.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t2-html.html"><span data-l="en">task2.html</span><span data-l="ru">task2.html</span><span data-l="kk">task2.html</span></a><a href="t2-js.html"><span data-l="en">task2.js</span><span data-l="ru">task2.js</span><span data-l="kk">task2.js</span></a><h4><span data-l="en">Task 3 · Ticket form</span><span data-l="ru">Задание 3 · Форма билетов</span><span data-l="kk">3-тапсырма · Билет формасы</span></h4><a href="t3.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t3-html.html"><span data-l="en">task3.html</span><span data-l="ru">task3.html</span><span data-l="kk">task3.html</span></a><a href="t3-js.html" class="on"><span data-l="en">task3.js</span><span data-l="ru">task3.js</span><span data-l="kk">task3.js</span></a><h4><span data-l="en">Shared style</span><span data-l="ru">Общий стиль</span><span data-l="kk">Ортақ стиль</span></h4><a href="css.html"><span data-l="en">style.css</span><span data-l="ru">style.css</span><span data-l="kk">style.css</span></a><h4><span data-l="en">Preparation</span><span data-l="ru">Подготовка</span><span data-l="kk">Дайындық</span></h4><a href="live.html"><span data-l="en">⚡ Live coding</span><span data-l="ru">⚡ Live coding</span><span data-l="kk">⚡ Live coding</span></a><a href="tips.html"><span data-l="en">💡 Tips</span><span data-l="ru">💡 Лайфхаки</span><span data-l="kk">💡 Кеңестер</span></a></nav><main><h1><span data-l="en">task3.js</span><span data-l="ru">task3.js</span><span data-l="kk">task3.js</span></h1><p class="lead"><span data-l="en">The biggest file, part by part.</span><span data-l="ru">Самый большой файл, по частям.</span><span data-l="kk">Ең үлкен файл, бөлім-бөлім.</span></p><section class="blk"><h3><span data-l="en">1. Data and constants</span><span data-l="ru">1. Данные и константы</span><span data-l="kk">1. Деректер мен тұрақтылар</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 3–33</small></h3><pre><span class="ln">3</span>/* ===== Task 3: Ticket builder (Option A) =====
+<span class="ln">4</span>   Live validation, live preview, final ticket built only from correct data. */
+<span class="ln">5</span>
+<span class="ln">6</span>// ---------- data ----------
+<span class="ln">7</span>const EVENTS = [
+<span class="ln">8</span>  { id: &#x27;hackathon&#x27;, name: &#x27;Astana Hackathon&#x27; },
+<span class="ln">9</span>  { id: &#x27;frontend&#x27;,  name: &#x27;Frontend Day&#x27; },
+<span class="ln">10</span>  { id: &#x27;ai-meetup&#x27;, name: &#x27;AI Meetup&#x27; }
+<span class="ln">11</span>];
+<span class="ln">12</span>
+<span class="ln">13</span>// seats left for every ticket type (changes after a booking)
+<span class="ln">14</span>const ticketTypes = [
+<span class="ln">15</span>  { id: &#x27;standard&#x27;, name: &#x27;Standard&#x27;, price: 5000,  seats: 8 },
+<span class="ln">16</span>  { id: &#x27;vip&#x27;,      name: &#x27;VIP&#x27;,      price: 15000, seats: 3 },
+<span class="ln">17</span>  { id: &#x27;student&#x27;,  name: &#x27;Student&#x27;,  price: 2500,  seats: 5 }
+<span class="ln">18</span>];
+<span class="ln">19</span>
+<span class="ln">20</span>const SOLD_OUT_DATES = [&#x27;2026-11-14&#x27;, &#x27;2026-11-21&#x27;, &#x27;2026-12-05&#x27;];
+<span class="ln">21</span>
+<span class="ln">22</span>const PROMO_CODES = [
+<span class="ln">23</span>  { code: &#x27;AKAVIL10&#x27;,  discount: 10 },
+<span class="ln">24</span>  { code: &#x27;STUDENT20&#x27;, discount: 20 },
+<span class="ln">25</span>  { code: &#x27;ASTANA5&#x27;,   discount: 5 }
+<span class="ln">26</span>];
+<span class="ln">27</span>
+<span class="ln">28</span>const BLOCKED_EMAIL_DOMAINS = [&#x27;mailinator.com&#x27;, &#x27;tempmail.com&#x27;, &#x27;10minutemail.com&#x27;];
+<span class="ln">29</span>
+<span class="ln">30</span>const MAX_QUANTITY = 10;
+<span class="ln">31</span>const MAX_DAYS_AHEAD = 120;
+<span class="ln">32</span>const CODE_ALPHABET = &#x27;ABCDEFGHJKLMNPQRSTUVWXYZ23456789&#x27;;
+<span class="ln">33</span>const CODE_LENGTH = 6;
+</pre><ul class="ex"><li><span data-l="en">Arrays of objects: events, ticket types with seats, promo codes; lists of sold-out dates and blocked domains.</span><span data-l="ru">Массивы объектов: события, типы билетов с местами, промокоды; списки sold-out дат и запрещённых доменов.</span><span data-l="kk">Объект массивтері: оқиғалар, орындары бар билет түрлері, промокодтар; sold-out күндер мен тыйым салынған домендер тізімі.</span></li></ul></section><section class="blk"><h3><span data-l="en">2. Elements</span><span data-l="ru">2. Элементы</span><span data-l="kk">2. Элементтер</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 35–50</small></h3><pre><span class="ln">35</span>// ---------- elements ----------
+<span class="ln">36</span>const form = document.getElementById(&#x27;ticketForm&#x27;);
+<span class="ln">37</span>const summaryEl = document.getElementById(&#x27;summary&#x27;);
+<span class="ln">38</span>const previewEl = document.getElementById(&#x27;preview&#x27;);
+<span class="ln">39</span>const resultEl = document.getElementById(&#x27;result&#x27;);
+<span class="ln">40</span>
+<span class="ln">41</span>const FIELD_NAMES = [&#x27;event&#x27;, &#x27;date&#x27;, &#x27;type&#x27;, &#x27;quantity&#x27;, &#x27;promo&#x27;, &#x27;name&#x27;, &#x27;email&#x27;];
+<span class="ln">42</span>const controls = {};
+<span class="ln">43</span>for (const fieldName of FIELD_NAMES) {
+<span class="ln">44</span>  controls[fieldName] = document.getElementById(fieldName);
+<span class="ln">45</span>}
+<span class="ln">46</span>
+<span class="ln">47</span>form.noValidate = true; // browser messages off, HTML attributes stay
+<span class="ln">48</span>
+<span class="ln">49</span>// fields the user has already left (blur) - they are checked on every input
+<span class="ln">50</span>const touched = new Set();
+</pre><ul class="ex"><li><span data-l="en"><code>controls</code> holds every field by name; <code>touched</code> is a <code>Set</code> of fields the user has left.</span><span data-l="ru"><code>controls</code> хранит все поля по имени; <code>touched</code> это <code>Set</code> полей, которые пользователь покинул.</span><span data-l="kk"><code>controls</code> барлық өрісті атымен сақтайды; <code>touched</code> пайдаланушы тастап кеткен өрістердің <code>Set</code>-і.</span></li></ul></section><section class="blk"><h3><span data-l="en">3. Helpers and options</span><span data-l="ru">3. Помощники и опции</span><span data-l="kk">3. Көмекшілер және опциялар</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 52–121</small></h3><pre><span class="ln">52</span>// ---------- small helpers ----------
+<span class="ln">53</span>function randomInt(min, max) {
+<span class="ln">54</span>  return Math.floor(Math.random() * (max - min + 1)) + min;
+<span class="ln">55</span>}
+<span class="ln">56</span>
+<span class="ln">57</span>function pad(n) {
+<span class="ln">58</span>  return String(n).padStart(2, &#x27;0&#x27;);
+<span class="ln">59</span>}
+<span class="ln">60</span>
+<span class="ln">61</span>function toDateString(date) {
+<span class="ln">62</span>  return date.getFullYear() + &#x27;-&#x27; + pad(date.getMonth() + 1) + &#x27;-&#x27; + pad(date.getDate());
+<span class="ln">63</span>}
+<span class="ln">64</span>
+<span class="ln">65</span>function todayString() {
+<span class="ln">66</span>  return toDateString(new Date());
+<span class="ln">67</span>}
+<span class="ln">68</span>
+<span class="ln">69</span>function maxDateString() {
+<span class="ln">70</span>  const d = new Date();
+<span class="ln">71</span>  d.setDate(d.getDate() + MAX_DAYS_AHEAD);
+<span class="ln">72</span>  return toDateString(d);
+<span class="ln">73</span>}
+<span class="ln">74</span>
+<span class="ln">75</span>function formatMoney(amount) {
+<span class="ln">76</span>  return amount.toLocaleString(&#x27;en-US&#x27;) + &#x27; ₸&#x27;;
+<span class="ln">77</span>}
+<span class="ln">78</span>
+<span class="ln">79</span>function findType(id) {
+<span class="ln">80</span>  return ticketTypes.find(function (t) { return t.id === id; });
+<span class="ln">81</span>}
+<span class="ln">82</span>
+<span class="ln">83</span>function findEvent(id) {
+<span class="ln">84</span>  return EVENTS.find(function (e) { return e.id === id; });
+<span class="ln">85</span>}
+<span class="ln">86</span>
+<span class="ln">87</span>function findPromo(value) {
+<span class="ln">88</span>  const code = value.trim().toUpperCase();
+<span class="ln">89</span>  return PROMO_CODES.find(function (p) { return p.code === code; });
+<span class="ln">90</span>}
+<span class="ln">91</span>
+<span class="ln">92</span>// ---------- fill selects ----------
+<span class="ln">93</span>function fillEventOptions() {
+<span class="ln">94</span>  controls.event.textContent = &#x27;&#x27;;
+<span class="ln">95</span>  const first = document.createElement(&#x27;option&#x27;);
+<span class="ln">96</span>  first.value = &#x27;&#x27;;
+<span class="ln">97</span>  first.textContent = &#x27;Choose an event&#x27;;
+<span class="ln">98</span>  controls.event.appendChild(first);
+<span class="ln">99</span>  for (const ev of EVENTS) {
+<span class="ln">100</span>    const option = document.createElement(&#x27;option&#x27;);
+<span class="ln">101</span>    option.value = ev.id;
+<span class="ln">102</span>    option.textContent = ev.name;
+<span class="ln">103</span>    controls.event.appendChild(option);
+<span class="ln">104</span>  }
+<span class="ln">105</span>}
+<span class="ln">106</span>
+<span class="ln">107</span>function fillTypeOptions() {
+<span class="ln">108</span>  const selected = controls.type.value;
+<span class="ln">109</span>  controls.type.textContent = &#x27;&#x27;;
+<span class="ln">110</span>  const first = document.createElement(&#x27;option&#x27;);
+<span class="ln">111</span>  first.value = &#x27;&#x27;;
+<span class="ln">112</span>  first.textContent = &#x27;Choose a ticket type&#x27;;
+<span class="ln">113</span>  controls.type.appendChild(first);
+<span class="ln">114</span>  for (const type of ticketTypes) {
+<span class="ln">115</span>    const option = document.createElement(&#x27;option&#x27;);
+<span class="ln">116</span>    option.value = type.id;
+<span class="ln">117</span>    option.textContent = type.name + &#x27; - &#x27; + formatMoney(type.price) + &#x27; (&#x27; + type.seats + &#x27; left)&#x27;;
+<span class="ln">118</span>    controls.type.appendChild(option);
+<span class="ln">119</span>  }
+<span class="ln">120</span>  controls.type.value = selected;
+<span class="ln">121</span>}
+</pre><ul class="ex"><li><span data-l="en"><code>randomInt</code>, date helpers (<code>todayString</code>, <code>maxDateString</code>) and <code>find…</code> functions for the arrays.</span><span data-l="ru"><code>randomInt</code>, помощники дат (<code>todayString</code>, <code>maxDateString</code>) и функции <code>find…</code> для массивов.</span><span data-l="kk"><code>randomInt</code>, күн көмекшілері (<code>todayString</code>, <code>maxDateString</code>) және массивтерге арналған <code>find…</code> функциялары.</span></li><li><span data-l="en"><code>fill…Options</code> build the select options from the arrays.</span><span data-l="ru"><code>fill…Options</code> строят опции select из массивов.</span><span data-l="kk"><code>fill…Options</code> select опцияларын массивтерден жасайды.</span></li></ul></section><section class="blk"><h3><span data-l="en">4. Validation rules</span><span data-l="ru">4. Правила проверки</span><span data-l="kk">4. Тексеру ережелері</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 123–201</small></h3><pre><span class="ln">123</span>// ---------- validation rules ----------
+<span class="ln">124</span>// every rule returns an error text or &#x27;&#x27; when the value is correct
+<span class="ln">125</span>const validators = {
+<span class="ln">126</span>  event: function (value) {
+<span class="ln">127</span>    return findEvent(value) ? &#x27;&#x27; : &#x27;Choose an event from the list.&#x27;;
+<span class="ln">128</span>  },
+<span class="ln">129</span>
+<span class="ln">130</span>  date: function (value) {
+<span class="ln">131</span>    if (value === &#x27;&#x27;) {
+<span class="ln">132</span>      return &#x27;Choose a date.&#x27;;
+<span class="ln">133</span>    }
+<span class="ln">134</span>    if (value &lt; todayString()) {
+<span class="ln">135</span>      return &#x27;The date is in the past. Choose today or a later day.&#x27;;
+<span class="ln">136</span>    }
+<span class="ln">137</span>    if (value &gt; maxDateString()) {
+<span class="ln">138</span>      return &#x27;Tickets are sold only &#x27; + MAX_DAYS_AHEAD + &#x27; days ahead.&#x27;;
+<span class="ln">139</span>    }
+<span class="ln">140</span>    if (SOLD_OUT_DATES.includes(value)) {
+<span class="ln">141</span>      return &#x27;Tickets for this date are sold out. Choose another date.&#x27;;
+<span class="ln">142</span>    }
+<span class="ln">143</span>    return &#x27;&#x27;;
+<span class="ln">144</span>  },
+<span class="ln">145</span>
+<span class="ln">146</span>  type: function (value) {
+<span class="ln">147</span>    return findType(value) ? &#x27;&#x27; : &#x27;Choose a ticket type.&#x27;;
+<span class="ln">148</span>  },
+<span class="ln">149</span>
+<span class="ln">150</span>  quantity: function (value) {
+<span class="ln">151</span>    if (value.trim() === &#x27;&#x27;) {
+<span class="ln">152</span>      return &#x27;Enter how many tickets you need.&#x27;;
+<span class="ln">153</span>    }
+<span class="ln">154</span>    const n = Number(value);
+<span class="ln">155</span>    if (!Number.isInteger(n)) {
+<span class="ln">156</span>      return &#x27;Quantity must be a whole number.&#x27;;
+<span class="ln">157</span>    }
+<span class="ln">158</span>    if (n &lt; 1 || n &gt; MAX_QUANTITY) {
+<span class="ln">159</span>      return &#x27;Quantity must be from 1 to &#x27; + MAX_QUANTITY + &#x27;.&#x27;;
+<span class="ln">160</span>    }
+<span class="ln">161</span>    const type = findType(controls.type.value);
+<span class="ln">162</span>    if (type &amp;&amp; n &gt; type.seats) {
+<span class="ln">163</span>      return &#x27;Only &#x27; + type.seats + &#x27; seat(s) left for the &#x27; + type.name + &#x27; ticket.&#x27;;
+<span class="ln">164</span>    }
+<span class="ln">165</span>    return &#x27;&#x27;;
+<span class="ln">166</span>  },
+<span class="ln">167</span>
+<span class="ln">168</span>  promo: function (value) {
+<span class="ln">169</span>    if (value.trim() === &#x27;&#x27;) {
+<span class="ln">170</span>      return &#x27;&#x27;; // the promo code is optional
+<span class="ln">171</span>    }
+<span class="ln">172</span>    return findPromo(value) ? &#x27;&#x27; : &#x27;Unknown promo code. Check it or leave the field empty.&#x27;;
+<span class="ln">173</span>  },
+<span class="ln">174</span>
+<span class="ln">175</span>  name: function (value) {
+<span class="ln">176</span>    const text = value.trim();
+<span class="ln">177</span>    if (text === &#x27;&#x27;) {
+<span class="ln">178</span>      return &#x27;Enter your name and surname.&#x27;;
+<span class="ln">179</span>    }
+<span class="ln">180</span>    // at least two words, letters only (Latin or Cyrillic), each word 2+ letters
+<span class="ln">181</span>    if (!/^[\p{L}]{2,}(?:[ &#x27;-][\p{L}]{2,})+$/u.test(text)) {
+<span class="ln">182</span>      return &#x27;Use two or more words with letters only, e.g. &quot;Aidos Nurlan&quot;.&#x27;;
+<span class="ln">183</span>    }
+<span class="ln">184</span>    return &#x27;&#x27;;
+<span class="ln">185</span>  },
+<span class="ln">186</span>
+<span class="ln">187</span>  email: function (value) {
+<span class="ln">188</span>    const text = value.trim();
+<span class="ln">189</span>    if (text === &#x27;&#x27;) {
+<span class="ln">190</span>      return &#x27;Enter your email.&#x27;;
+<span class="ln">191</span>    }
+<span class="ln">192</span>    if (controls.email.validity.typeMismatch || !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(text)) {
+<span class="ln">193</span>      return &#x27;Email must look like name@example.com.&#x27;;
+<span class="ln">194</span>    }
+<span class="ln">195</span>    const domain = text.split(&#x27;@&#x27;)[1].toLowerCase();
+<span class="ln">196</span>    if (BLOCKED_EMAIL_DOMAINS.includes(domain)) {
+<span class="ln">197</span>      return &#x27;Temporary email services (&#x27; + domain + &#x27;) are not allowed.&#x27;;
+<span class="ln">198</span>    }
+<span class="ln">199</span>    return &#x27;&#x27;;
+<span class="ln">200</span>  }
+<span class="ln">201</span>};
+</pre><ul class="ex"><li><span data-l="en">Each rule is a function: it returns an error text, or an empty string if the value is correct.</span><span data-l="ru">Каждое правило функция: возвращает текст ошибки или пустую строку, если значение верное.</span><span data-l="kk">Әр ереже функция: қате мәтінін немесе мән дұрыс болса бос жолды қайтарады.</span></li><li><span data-l="en"><code>date</code>: past, too far ahead, sold out. <code>quantity</code>: whole number, 1–10, not above seats left.</span><span data-l="ru"><code>date</code>: прошлое, слишком далеко, sold out. <code>quantity</code>: целое, 1–10, не больше оставшихся мест.</span><span data-l="kk"><code>date</code>: өткен, тым алыс, sold out. <code>quantity</code>: бүтін, 1–10, қалған орыннан аспайды.</span></li><li><span data-l="en"><code>name</code>: regex with <code>\p{L}</code>, two or more words. <code>email</code>: format and blocked domains.</span><span data-l="ru"><code>name</code>: регулярка с <code>\p{L}</code>, два и более слова. <code>email</code>: формат и запрещённые домены.</span><span data-l="kk"><code>name</code>: <code>\p{L}</code> бар регулярка, екі және одан көп сөз. <code>email</code>: формат және тыйым салынған домендер.</span></li></ul></section><section class="blk"><h3><span data-l="en">5. Showing the result of a check</span><span data-l="ru">5. Показ результата проверки</span><span data-l="kk">5. Тексеру нәтижесін көрсету</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 203–227</small></h3><pre><span class="ln">203</span>// show or clear the message under one field
+<span class="ln">204</span>function showFieldState(fieldName, errorText) {
+<span class="ln">205</span>  const control = controls[fieldName];
+<span class="ln">206</span>  const wrapper = control.closest(&#x27;.field&#x27;);
+<span class="ln">207</span>  const errorEl = document.getElementById(fieldName + &#x27;-error&#x27;);
+<span class="ln">208</span>
+<span class="ln">209</span>  errorEl.textContent = errorText;
+<span class="ln">210</span>  wrapper.classList.toggle(&#x27;field--invalid&#x27;, errorText !== &#x27;&#x27;);
+<span class="ln">211</span>  wrapper.classList.toggle(&#x27;field--valid&#x27;, errorText === &#x27;&#x27; &amp;&amp; control.value.trim() !== &#x27;&#x27;);
+<span class="ln">212</span>  control.setAttribute(&#x27;aria-invalid&#x27;, errorText === &#x27;&#x27; ? &#x27;false&#x27; : &#x27;true&#x27;);
+<span class="ln">213</span>}
+<span class="ln">214</span>
+<span class="ln">215</span>function clearFieldState(fieldName) {
+<span class="ln">216</span>  const control = controls[fieldName];
+<span class="ln">217</span>  const wrapper = control.closest(&#x27;.field&#x27;);
+<span class="ln">218</span>  document.getElementById(fieldName + &#x27;-error&#x27;).textContent = &#x27;&#x27;;
+<span class="ln">219</span>  wrapper.classList.remove(&#x27;field--invalid&#x27;, &#x27;field--valid&#x27;);
+<span class="ln">220</span>  control.removeAttribute(&#x27;aria-invalid&#x27;);
+<span class="ln">221</span>}
+<span class="ln">222</span>
+<span class="ln">223</span>function checkField(fieldName) {
+<span class="ln">224</span>  const error = validators[fieldName](controls[fieldName].value);
+<span class="ln">225</span>  showFieldState(fieldName, error);
+<span class="ln">226</span>  return error;
+<span class="ln">227</span>}
+</pre><ul class="ex"><li><span data-l="en"><code>checkField</code> runs the rule and calls <code>showFieldState</code>: error text, <code>aria-invalid</code>, CSS class.</span><span data-l="ru"><code>checkField</code> запускает правило и вызывает <code>showFieldState</code>: текст ошибки, <code>aria-invalid</code>, CSS-класс.</span><span data-l="kk"><code>checkField</code> ережені іске қосып, <code>showFieldState</code> шақырады: қате мәтіні, <code>aria-invalid</code>, CSS класы.</span></li></ul></section><section class="blk"><h3><span data-l="en">6. Live preview</span><span data-l="ru">6. Живой предпросмотр</span><span data-l="kk">6. Тікелей көрініс</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 229–286</small></h3><pre><span class="ln">229</span>// ---------- live preview ----------
+<span class="ln">230</span>function addRow(list, label, value) {
+<span class="ln">231</span>  const row = document.createElement(&#x27;div&#x27;);
+<span class="ln">232</span>  row.className = &#x27;ticket__row&#x27;;
+<span class="ln">233</span>  const dt = document.createElement(&#x27;dt&#x27;);
+<span class="ln">234</span>  dt.textContent = label;
+<span class="ln">235</span>  const dd = document.createElement(&#x27;dd&#x27;);
+<span class="ln">236</span>  dd.textContent = value;
+<span class="ln">237</span>  row.appendChild(dt);
+<span class="ln">238</span>  row.appendChild(dd);
+<span class="ln">239</span>  list.appendChild(row);
+<span class="ln">240</span>}
+<span class="ln">241</span>
+<span class="ln">242</span>function calculateTotal(typeId, quantityText, promoText) {
+<span class="ln">243</span>  const type = findType(typeId);
+<span class="ln">244</span>  const qty = Number(quantityText);
+<span class="ln">245</span>  if (!type || !Number.isInteger(qty) || qty &lt; 1) {
+<span class="ln">246</span>    return { total: 0, discount: 0 };
+<span class="ln">247</span>  }
+<span class="ln">248</span>  const promo = findPromo(promoText);
+<span class="ln">249</span>  const discount = promo ? promo.discount : 0;
+<span class="ln">250</span>  const gross = type.price * qty;
+<span class="ln">251</span>  return { total: Math.round(gross * (100 - discount) / 100), discount: discount };
+<span class="ln">252</span>}
+<span class="ln">253</span>
+<span class="ln">254</span>function renderPreview() {
+<span class="ln">255</span>  const ev = findEvent(controls.event.value);
+<span class="ln">256</span>  const type = findType(controls.type.value);
+<span class="ln">257</span>  const name = controls.name.value.trim();
+<span class="ln">258</span>  const email = controls.email.value.trim();
+<span class="ln">259</span>  const qty = controls.quantity.value.trim();
+<span class="ln">260</span>  const date = controls.date.value;
+<span class="ln">261</span>  const money = calculateTotal(controls.type.value, qty, controls.promo.value);
+<span class="ln">262</span>
+<span class="ln">263</span>  previewEl.textContent = &#x27;&#x27;;
+<span class="ln">264</span>
+<span class="ln">265</span>  const title = document.createElement(&#x27;h3&#x27;);
+<span class="ln">266</span>  title.className = &#x27;ticket__title&#x27;;
+<span class="ln">267</span>  title.textContent = ev ? ev.name : &#x27;Your event&#x27;;
+<span class="ln">268</span>  previewEl.appendChild(title);
+<span class="ln">269</span>
+<span class="ln">270</span>  const rows = document.createElement(&#x27;dl&#x27;);
+<span class="ln">271</span>  rows.className = &#x27;ticket__rows&#x27;;
+<span class="ln">272</span>  addRow(rows, &#x27;Date&#x27;, date || &#x27;-&#x27;);
+<span class="ln">273</span>  addRow(rows, &#x27;Type&#x27;, type ? type.name : &#x27;-&#x27;);
+<span class="ln">274</span>  addRow(rows, &#x27;Quantity&#x27;, qty || &#x27;-&#x27;);
+<span class="ln">275</span>  addRow(rows, &#x27;Name&#x27;, name || &#x27;-&#x27;);
+<span class="ln">276</span>  addRow(rows, &#x27;Email&#x27;, email || &#x27;-&#x27;);
+<span class="ln">277</span>  if (money.discount &gt; 0) {
+<span class="ln">278</span>    addRow(rows, &#x27;Promo&#x27;, &#x27;-&#x27; + money.discount + &#x27;%&#x27;);
+<span class="ln">279</span>  }
+<span class="ln">280</span>  previewEl.appendChild(rows);
+<span class="ln">281</span>
+<span class="ln">282</span>  const total = document.createElement(&#x27;div&#x27;);
+<span class="ln">283</span>  total.className = &#x27;ticket__total&#x27;;
+<span class="ln">284</span>  total.textContent = &#x27;Total: &#x27; + formatMoney(money.total);
+<span class="ln">285</span>  previewEl.appendChild(total);
+<span class="ln">286</span>}
+</pre><ul class="ex"><li><span data-l="en"><code>calculateTotal</code>: price × quantity minus promo discount.</span><span data-l="ru"><code>calculateTotal</code>: цена × количество минус скидка промокода.</span><span data-l="kk"><code>calculateTotal</code>: баға × саны минус промокод жеңілдігі.</span></li><li><span data-l="en"><code>renderPreview</code> rebuilds the ticket preview on every input.</span><span data-l="ru"><code>renderPreview</code> заново строит предпросмотр билета при каждом input.</span><span data-l="kk"><code>renderPreview</code> әр input кезінде билет көрінісін қайта құрады.</span></li></ul></section><section class="blk"><h3><span data-l="en">7. Form events</span><span data-l="ru">7. События формы</span><span data-l="kk">7. Форма оқиғалары</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 288–344</small></h3><pre><span class="ln">288</span>// ---------- events ----------
+<span class="ln">289</span>for (const fieldName of FIELD_NAMES) {
+<span class="ln">290</span>  const control = controls[fieldName];
+<span class="ln">291</span>
+<span class="ln">292</span>  // 1) leaving a field: first check
+<span class="ln">293</span>  control.addEventListener(&#x27;blur&#x27;, function () {
+<span class="ln">294</span>    touched.add(fieldName);
+<span class="ln">295</span>    checkField(fieldName);
+<span class="ln">296</span>  });
+<span class="ln">297</span>
+<span class="ln">298</span>  // 2) after that: check on every input
+<span class="ln">299</span>  control.addEventListener(&#x27;input&#x27;, function () {
+<span class="ln">300</span>    if (touched.has(fieldName)) {
+<span class="ln">301</span>      checkField(fieldName);
+<span class="ln">302</span>    }
+<span class="ln">303</span>    // quantity depends on the ticket type, so check it again when the type changes
+<span class="ln">304</span>    if (fieldName === &#x27;type&#x27; &amp;&amp; touched.has(&#x27;quantity&#x27;)) {
+<span class="ln">305</span>      checkField(&#x27;quantity&#x27;);
+<span class="ln">306</span>    }
+<span class="ln">307</span>    renderPreview();
+<span class="ln">308</span>  });
+<span class="ln">309</span>}
+<span class="ln">310</span>
+<span class="ln">311</span>form.addEventListener(&#x27;submit&#x27;, function (event) {
+<span class="ln">312</span>  event.preventDefault();
+<span class="ln">313</span>
+<span class="ln">314</span>  let errorCount = 0;
+<span class="ln">315</span>  let firstInvalid = null;
+<span class="ln">316</span>
+<span class="ln">317</span>  for (const fieldName of FIELD_NAMES) {
+<span class="ln">318</span>    touched.add(fieldName);
+<span class="ln">319</span>    if (checkField(fieldName) !== &#x27;&#x27;) {
+<span class="ln">320</span>      errorCount += 1;
+<span class="ln">321</span>      if (firstInvalid === null) {
+<span class="ln">322</span>        firstInvalid = controls[fieldName];
+<span class="ln">323</span>      }
+<span class="ln">324</span>    }
+<span class="ln">325</span>  }
+<span class="ln">326</span>
+<span class="ln">327</span>  if (errorCount &gt; 0) {
+<span class="ln">328</span>    summaryEl.textContent = &#x27;The form has &#x27; + errorCount + &#x27; error&#x27; + (errorCount === 1 ? &#x27;&#x27; : &#x27;s&#x27;) + &#x27;. Please fix the fields marked in red.&#x27;;
+<span class="ln">329</span>    summaryEl.classList.remove(&#x27;hidden&#x27;);
+<span class="ln">330</span>    firstInvalid.focus();
+<span class="ln">331</span>    return;
+<span class="ln">332</span>  }
+<span class="ln">333</span>
+<span class="ln">334</span>  summaryEl.classList.add(&#x27;hidden&#x27;);
+<span class="ln">335</span>  summaryEl.textContent = &#x27;&#x27;;
+<span class="ln">336</span>  buildFinalTicket();
+<span class="ln">337</span>});
+<span class="ln">338</span>
+<span class="ln">339</span>form.addEventListener(&#x27;reset&#x27;, function () {
+<span class="ln">340</span>  // wait until the browser clears the values, then clean the states
+<span class="ln">341</span>  setTimeout(function () {
+<span class="ln">342</span>    resetFormState();
+<span class="ln">343</span>  }, 0);
+<span class="ln">344</span>});
+</pre><ul class="ex"><li><span data-l="en"><code>blur</code>: mark the field as touched and check it.</span><span data-l="ru"><code>blur</code>: пометить поле как touched и проверить.</span><span data-l="kk"><code>blur</code>: өрісті touched деп белгілеп, тексеру.</span></li><li><span data-l="en"><code>input</code>: check only if touched; re-check quantity when type changes; always update the preview.</span><span data-l="ru"><code>input</code>: проверять только touched; при смене type перепроверить quantity; предпросмотр обновлять всегда.</span><span data-l="kk"><code>input</code>: тек touched болса тексеру; type өзгерсе quantity-ді қайта тексеру; көріністі әрдайым жаңарту.</span></li><li><span data-l="en"><code>submit</code>: <code>preventDefault()</code>, check all fields, show the error count and <code>focus()</code> the first invalid field.</span><span data-l="ru"><code>submit</code>: <code>preventDefault()</code>, проверить все поля, показать число ошибок и сделать <code>focus()</code> на первом неверном.</span><span data-l="kk"><code>submit</code>: <code>preventDefault()</code>, барлық өрісті тексеру, қате санын көрсету және бірінші қате өрісіне <code>focus()</code> жасау.</span></li></ul></section><section class="blk"><h3><span data-l="en">8. Final ticket</span><span data-l="ru">8. Итоговый билет</span><span data-l="kk">8. Соңғы билет</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 346–419</small></h3><pre><span class="ln">346</span>// ---------- final result ----------
+<span class="ln">347</span>function makeBookingCode() {
+<span class="ln">348</span>  let code = &#x27;AK-&#x27;;
+<span class="ln">349</span>  for (let i = 0; i &lt; CODE_LENGTH; i++) {
+<span class="ln">350</span>    code += CODE_ALPHABET[randomInt(0, CODE_ALPHABET.length - 1)];
+<span class="ln">351</span>  }
+<span class="ln">352</span>  return code;
+<span class="ln">353</span>}
+<span class="ln">354</span>
+<span class="ln">355</span>function buildFinalTicket() {
+<span class="ln">356</span>  const ev = findEvent(controls.event.value);
+<span class="ln">357</span>  const type = findType(controls.type.value);
+<span class="ln">358</span>  const qty = Number(controls.quantity.value);
+<span class="ln">359</span>  const money = calculateTotal(controls.type.value, controls.quantity.value, controls.promo.value);
+<span class="ln">360</span>  const data = {
+<span class="ln">361</span>    event: ev.name,
+<span class="ln">362</span>    date: controls.date.value,
+<span class="ln">363</span>    type: type.name,
+<span class="ln">364</span>    qty: qty,
+<span class="ln">365</span>    name: controls.name.value.trim(),
+<span class="ln">366</span>    email: controls.email.value.trim(),
+<span class="ln">367</span>    discount: money.discount,
+<span class="ln">368</span>    total: money.total
+<span class="ln">369</span>  };
+<span class="ln">370</span>
+<span class="ln">371</span>  type.seats -= qty; // seats left go down after a booking
+<span class="ln">372</span>
+<span class="ln">373</span>  resultEl.textContent = &#x27;&#x27;;
+<span class="ln">374</span>  const ticket = document.createElement(&#x27;div&#x27;);
+<span class="ln">375</span>  ticket.className = &#x27;ticket ticket--final&#x27;;
+<span class="ln">376</span>
+<span class="ln">377</span>  const heading = document.createElement(&#x27;h3&#x27;);
+<span class="ln">378</span>  heading.className = &#x27;ticket__title&#x27;;
+<span class="ln">379</span>  heading.textContent = &#x27;Booking confirmed: &#x27; + data.event;
+<span class="ln">380</span>  ticket.appendChild(heading);
+<span class="ln">381</span>
+<span class="ln">382</span>  const rows = document.createElement(&#x27;dl&#x27;);
+<span class="ln">383</span>  rows.className = &#x27;ticket__rows&#x27;;
+<span class="ln">384</span>  addRow(rows, &#x27;Date&#x27;, data.date);
+<span class="ln">385</span>  addRow(rows, &#x27;Type&#x27;, data.type);
+<span class="ln">386</span>  addRow(rows, &#x27;Quantity&#x27;, String(data.qty));
+<span class="ln">387</span>  addRow(rows, &#x27;Name&#x27;, data.name);
+<span class="ln">388</span>  addRow(rows, &#x27;Email&#x27;, data.email);
+<span class="ln">389</span>  if (data.discount &gt; 0) {
+<span class="ln">390</span>    addRow(rows, &#x27;Promo&#x27;, &#x27;-&#x27; + data.discount + &#x27;%&#x27;);
+<span class="ln">391</span>  }
+<span class="ln">392</span>  ticket.appendChild(rows);
+<span class="ln">393</span>
+<span class="ln">394</span>  const total = document.createElement(&#x27;div&#x27;);
+<span class="ln">395</span>  total.className = &#x27;ticket__total&#x27;;
+<span class="ln">396</span>  total.textContent = &#x27;Paid: &#x27; + formatMoney(data.total);
+<span class="ln">397</span>  ticket.appendChild(total);
+<span class="ln">398</span>
+<span class="ln">399</span>  const code = document.createElement(&#x27;div&#x27;);
+<span class="ln">400</span>  code.className = &#x27;ticket__code&#x27;;
+<span class="ln">401</span>  code.textContent = makeBookingCode();
+<span class="ln">402</span>  ticket.appendChild(code);
+<span class="ln">403</span>
+<span class="ln">404</span>  resultEl.appendChild(ticket);
+<span class="ln">405</span>
+<span class="ln">406</span>  form.reset(); // the reset event handler clears all states
+<span class="ln">407</span>  fillTypeOptions();
+<span class="ln">408</span>}
+<span class="ln">409</span>
+<span class="ln">410</span>function resetFormState() {
+<span class="ln">411</span>  touched.clear();
+<span class="ln">412</span>  for (const fieldName of FIELD_NAMES) {
+<span class="ln">413</span>    clearFieldState(fieldName);
+<span class="ln">414</span>  }
+<span class="ln">415</span>  summaryEl.classList.add(&#x27;hidden&#x27;);
+<span class="ln">416</span>  summaryEl.textContent = &#x27;&#x27;;
+<span class="ln">417</span>  fillTypeOptions();
+<span class="ln">418</span>  renderPreview();
+<span class="ln">419</span>}
+</pre><ul class="ex"><li><span data-l="en"><code>makeBookingCode</code> picks <code>CODE_LENGTH</code> random characters from an alphabet.</span><span data-l="ru"><code>makeBookingCode</code> берёт <code>CODE_LENGTH</code> случайных символов из алфавита.</span><span data-l="kk"><code>makeBookingCode</code> әліпбиден <code>CODE_LENGTH</code> кездейсоқ таңба алады.</span></li><li><span data-l="en"><code>buildFinalTicket</code> builds the ticket with the DOM and takes the seats; then the form is reset.</span><span data-l="ru"><code>buildFinalTicket</code> строит билет через DOM и занимает места; затем форма сбрасывается.</span><span data-l="kk"><code>buildFinalTicket</code> билетті DOM арқылы жасап, орындарды алады; сосын форма тасталады.</span></li></ul></section><section class="blk"><h3><span data-l="en">9. Start</span><span data-l="ru">9. Старт</span><span data-l="kk">9. Бастау</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 421–426</small></h3><pre><span class="ln">421</span>// ---------- start ----------
+<span class="ln">422</span>fillEventOptions();
+<span class="ln">423</span>fillTypeOptions();
+<span class="ln">424</span>controls.date.min = todayString();
+<span class="ln">425</span>controls.date.max = maxDateString();
+<span class="ln">426</span>renderPreview();
+</pre><ul class="ex"><li><span data-l="en">Fill the options and draw the first preview when the page loads.</span><span data-l="ru">При загрузке заполняем опции и рисуем первый предпросмотр.</span><span data-l="kk">Бет жүктелгенде опцияларды толтырып, алғашқы көріністі саламыз.</span></li></ul></section></main></div><script>var L;try{L=localStorage.getItem("lang")}catch(e){}L=L||"ru";function s(l){document.body.dataset.lang=l;document.documentElement.lang=l;try{localStorage.setItem("lang",l)}catch(e){}document.querySelectorAll(".sw button").forEach(function(b){b.classList.toggle("on",b.dataset.set===l)})}document.querySelectorAll(".sw button").forEach(function(b){b.onclick=function(){s(b.dataset.set)}});s(L);</script></body></html>

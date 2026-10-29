@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Assignment 5 · Aruzhan</title><style>*{box-sizing:border-box}body{margin:0;font:16px/1.65 "Segoe UI",system-ui,sans-serif;background:#0d1024;color:#e6e9ff}
+a{color:#8fa0ff}code{background:#232850;padding:1px 6px;border-radius:6px;color:#7ff0d4;font-size:.9em}
+.app{display:grid;grid-template-columns:270px minmax(0,1fr);min-height:100vh}
+nav{background:#12163a;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto;border-right:1px solid #262b5c}
+nav h4{margin:18px 8px 6px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#7b84c9}
+nav a{display:block;padding:7px 12px;border-radius:10px;color:#cdd3ff;text-decoration:none}nav a:hover{background:#1e2452}
+nav a.on{background:linear-gradient(90deg,#5468ff,#8a5cff);color:#fff}
+main{padding:32px clamp(16px,4vw,56px);max-width:1000px;overflow-wrap:anywhere}
+h1{font-size:2rem;margin:0 0 6px;background:linear-gradient(90deg,#8fa0ff,#7ff0d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{margin:30px 0 8px;color:#fff}.lead{color:#a9b1e8}
+.hero{padding:30px;border-radius:20px;background:linear-gradient(135deg,#3a4bd8,#8a5cff 60%,#12b5a0);margin-bottom:24px}.hero h1{background:none;color:#fff;-webkit-text-fill-color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:#161a40;border:1px solid #262b5c;border-radius:16px;padding:16px;transition:.15s}.card:hover{transform:translateY(-3px);border-color:#5468ff}
+.card h3{margin:0 0 6px}.tag{display:inline-block;font-size:.75rem;padding:2px 10px;border-radius:99px;background:#2a3070;color:#bcc5ff;margin:2px}
+.blk{background:#141838;border:1px solid #262b5c;border-radius:16px;margin:20px 0;overflow:hidden}
+.blk h3{margin:0;padding:12px 16px;background:#1a1f4a}.blk small{color:#8d96d8;font-weight:400}
+pre{margin:0;padding:14px 0;overflow-x:auto;font:13px/1.6 Consolas,Menlo,monospace;background:#0a0d20;color:#d7dcff}
+.ln{display:inline-block;width:3.4em;text-align:right;padding-right:14px;color:#566;user-select:none}
+.ex{margin:0;padding:12px 16px 12px 34px;border-top:1px solid #262b5c}.ex li{margin:5px 0}
+.box{border-left:4px solid #7ff0d4;background:#12223a;padding:10px 16px;border-radius:0 12px 12px 0;margin:12px 0}
+.warn{border-color:#ffb703;background:#2a2410}
+@media(max-width:800px){.app{grid-template-columns:minmax(0,1fr)}nav{position:static;height:auto}}
+.sw{display:flex;gap:6px;margin:0 8px 10px}.sw button{flex:1;padding:8px;border:1px solid #3a4180;background:#1a1f4a;color:#cdd3ff;border-radius:10px;cursor:pointer;font-weight:600;font-size:.9rem;font-family:inherit}.sw button.on{background:linear-gradient(90deg,#5468ff,#8a5cff);color:#fff;border-color:transparent}.sw button:focus-visible{outline:3px solid #ffb703}
+body[data-lang="en"] [data-l]:not([data-l="en"]),body[data-lang="ru"] [data-l]:not([data-l="ru"]),body[data-lang="kk"] [data-l]:not([data-l="kk"]){display:none}
+</style></head><body data-lang="ru"><div class="app"><nav><div class="sw"><button data-set="en">EN</button><button data-set="ru">RU</button><button data-set="kk">ҚАЗ</button></div><a href="index.html"><span data-l="en">🏠 Home</span><span data-l="ru">🏠 Главная</span><span data-l="kk">🏠 Басты бет</span></a><a href="basics.html"><span data-l="en">🧠 Basics from zero</span><span data-l="ru">🧠 Основы с нуля</span><span data-l="kk">🧠 Негіздер (нөлден)</span></a><h4><span data-l="en">Task 1 · Higher or Lower</span><span data-l="ru">Задание 1 · Выше или ниже</span><span data-l="kk">1-тапсырма · Жоғары/төмен</span></h4><a href="t1.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t1-html.html"><span data-l="en">task1.html</span><span data-l="ru">task1.html</span><span data-l="kk">task1.html</span></a><a href="t1-js.html"><span data-l="en">task1.js</span><span data-l="ru">task1.js</span><span data-l="kk">task1.js</span></a><h4><span data-l="en">Task 2 · Kanban</span><span data-l="ru">Задание 2 · Канбан</span><span data-l="kk">2-тапсырма · Канбан</span></h4><a href="t2.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t2-html.html" class="on"><span data-l="en">task2.html</span><span data-l="ru">task2.html</span><span data-l="kk">task2.html</span></a><a href="t2-js.html"><span data-l="en">task2.js</span><span data-l="ru">task2.js</span><span data-l="kk">task2.js</span></a><h4><span data-l="en">Task 3 · Ticket form</span><span data-l="ru">Задание 3 · Форма билетов</span><span data-l="kk">3-тапсырма · Билет формасы</span></h4><a href="t3.html"><span data-l="en">Overview</span><span data-l="ru">Обзор</span><span data-l="kk">Шолу</span></a><a href="t3-html.html"><span data-l="en">task3.html</span><span data-l="ru">task3.html</span><span data-l="kk">task3.html</span></a><a href="t3-js.html"><span data-l="en">task3.js</span><span data-l="ru">task3.js</span><span data-l="kk">task3.js</span></a><h4><span data-l="en">Shared style</span><span data-l="ru">Общий стиль</span><span data-l="kk">Ортақ стиль</span></h4><a href="css.html"><span data-l="en">style.css</span><span data-l="ru">style.css</span><span data-l="kk">style.css</span></a><h4><span data-l="en">Preparation</span><span data-l="ru">Подготовка</span><span data-l="kk">Дайындық</span></h4><a href="live.html"><span data-l="en">⚡ Live coding</span><span data-l="ru">⚡ Live coding</span><span data-l="kk">⚡ Live coding</span></a><a href="tips.html"><span data-l="en">💡 Tips</span><span data-l="ru">💡 Лайфхаки</span><span data-l="kk">💡 Кеңестер</span></a></nav><main><h1><span data-l="en">task2.html</span><span data-l="ru">task2.html</span><span data-l="kk">task2.html</span></h1><p class="lead"><span data-l="en">Only empty containers for the board and filters.</span><span data-l="ru">Только пустые контейнеры для доски и фильтров.</span><span data-l="kk">Тақта мен сүзгілерге тек бос контейнерлер.</span></p><section class="blk"><h3><span data-l="en">Page body</span><span data-l="ru">Тело страницы</span><span data-l="kk">Бет денесі</span> <small><span data-l="en">lines</span><span data-l="ru">строки</span><span data-l="kk">жолдар</span> 10–64</small></h3><pre><span class="ln">10</span>&lt;body&gt;
+<span class="ln">11</span>  &lt;header class=&quot;site-header&quot;&gt;
+<span class="ln">12</span>    &lt;div class=&quot;site-header__inner&quot;&gt;
+<span class="ln">13</span>      &lt;a class=&quot;brand&quot; href=&quot;index.html&quot;&gt;Assignment 5&lt;/a&gt;
+<span class="ln">14</span>      &lt;nav class=&quot;nav&quot; aria-label=&quot;Main&quot;&gt;
+<span class="ln">15</span>        &lt;a href=&quot;index.html&quot;&gt;Home&lt;/a&gt;
+<span class="ln">16</span>        &lt;a href=&quot;task1.html&quot;&gt;Task 1&lt;/a&gt;
+<span class="ln">17</span>        &lt;a href=&quot;task2.html&quot; aria-current=&quot;page&quot;&gt;Task 2&lt;/a&gt;
+<span class="ln">18</span>        &lt;a href=&quot;task3.html&quot;&gt;Task 3&lt;/a&gt;
+<span class="ln">19</span>      &lt;/nav&gt;
+<span class="ln">20</span>    &lt;/div&gt;
+<span class="ln">21</span>  &lt;/header&gt;
+<span class="ln">22</span>
+<span class="ln">23</span>  &lt;main class=&quot;container&quot;&gt;
+<span class="ln">24</span>    &lt;h1&gt;Kanban board&lt;/h1&gt;
+<span class="ln">25</span>    &lt;p class=&quot;lead&quot;&gt;Move cards between the columns with the buttons. The &quot;In progress&quot; column holds at most 3 cards. Use search, the tag filter and sorting to find cards.&lt;/p&gt;
+<span class="ln">26</span>
+<span class="ln">27</span>    &lt;section class=&quot;toolbar&quot; aria-label=&quot;Filters&quot;&gt;
+<span class="ln">28</span>      &lt;div class=&quot;field&quot;&gt;
+<span class="ln">29</span>        &lt;label class=&quot;field__label&quot; for=&quot;search&quot;&gt;Search by title&lt;/label&gt;
+<span class="ln">30</span>        &lt;input class=&quot;field__control&quot; id=&quot;search&quot; type=&quot;search&quot; placeholder=&quot;e.g. login&quot; autocomplete=&quot;off&quot;&gt;
+<span class="ln">31</span>      &lt;/div&gt;
+<span class="ln">32</span>      &lt;div class=&quot;field&quot;&gt;
+<span class="ln">33</span>        &lt;label class=&quot;field__label&quot; for=&quot;tagFilter&quot;&gt;Filter by tag&lt;/label&gt;
+<span class="ln">34</span>        &lt;select class=&quot;field__control&quot; id=&quot;tagFilter&quot;&gt;&lt;/select&gt;
+<span class="ln">35</span>      &lt;/div&gt;
+<span class="ln">36</span>      &lt;div class=&quot;field&quot;&gt;
+<span class="ln">37</span>        &lt;label class=&quot;field__label&quot; for=&quot;sortBy&quot;&gt;Sort cards by&lt;/label&gt;
+<span class="ln">38</span>        &lt;select class=&quot;field__control&quot; id=&quot;sortBy&quot;&gt;
+<span class="ln">39</span>          &lt;option value=&quot;priority&quot;&gt;Priority (high first)&lt;/option&gt;
+<span class="ln">40</span>          &lt;option value=&quot;hours&quot;&gt;Hours (fewest first)&lt;/option&gt;
+<span class="ln">41</span>          &lt;option value=&quot;title&quot;&gt;Title (A-Z)&lt;/option&gt;
+<span class="ln">42</span>        &lt;/select&gt;
+<span class="ln">43</span>      &lt;/div&gt;
+<span class="ln">44</span>      &lt;button type=&quot;button&quot; class=&quot;btn btn--ghost&quot; id=&quot;resetBtn&quot;&gt;Reset board&lt;/button&gt;
+<span class="ln">45</span>    &lt;/section&gt;
+<span class="ln">46</span>
+<span class="ln">47</span>    &lt;section class=&quot;progress-wrap card&quot; aria-label=&quot;Progress&quot;&gt;
+<span class="ln">48</span>      &lt;div class=&quot;progress-meta&quot;&gt;
+<span class="ln">49</span>        &lt;strong id=&quot;progressText&quot;&gt;&lt;/strong&gt;
+<span class="ln">50</span>        &lt;span id=&quot;hoursText&quot;&gt;&lt;/span&gt;
+<span class="ln">51</span>      &lt;/div&gt;
+<span class="ln">52</span>      &lt;progress id=&quot;progressBar&quot; max=&quot;100&quot; value=&quot;0&quot; aria-label=&quot;Share of finished cards&quot;&gt;&lt;/progress&gt;
+<span class="ln">53</span>    &lt;/section&gt;
+<span class="ln">54</span>
+<span class="ln">55</span>    &lt;div class=&quot;message message--info&quot; id=&quot;message&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;Ready. Pick a card and press a button.&lt;/div&gt;
+<span class="ln">56</span>
+<span class="ln">57</span>    &lt;div class=&quot;empty-state hidden&quot; id=&quot;emptyState&quot;&gt;No cards found. Try a different search or tag.&lt;/div&gt;
+<span class="ln">58</span>
+<span class="ln">59</span>    &lt;div class=&quot;board&quot; id=&quot;board&quot;&gt;&lt;/div&gt;
+<span class="ln">60</span>  &lt;/main&gt;
+<span class="ln">61</span>
+<span class="ln">62</span>  &lt;footer class=&quot;footer&quot;&gt;Zhaksylyk Aruzhan, group IT-2511, Astana IT University&lt;/footer&gt;
+<span class="ln">63</span>&lt;/body&gt;
+<span class="ln">64</span>&lt;/html&gt;
+</pre><ul class="ex"><li><span data-l="en">The board is empty; JS creates columns and cards.</span><span data-l="ru">Доска пустая: колонки и карточки создаёт JS.</span><span data-l="kk">Тақта бос: бағандар мен карточкаларды JS жасайды.</span></li><li><span data-l="en">Search input, tag and sort selects, a reset button, a progress bar.</span><span data-l="ru">Поле поиска, селекты тега и сортировки, кнопка сброса, прогресс-бар.</span><span data-l="kk">Іздеу өрісі, тег пен сұрыптау таңдауы, тастау түймесі, прогресс-бар.</span></li></ul></section></main></div><script>var L;try{L=localStorage.getItem("lang")}catch(e){}L=L||"ru";function s(l){document.body.dataset.lang=l;document.documentElement.lang=l;try{localStorage.setItem("lang",l)}catch(e){}document.querySelectorAll(".sw button").forEach(function(b){b.classList.toggle("on",b.dataset.set===l)})}document.querySelectorAll(".sw button").forEach(function(b){b.onclick=function(){s(b.dataset.set)}});s(L);</script></body></html>
